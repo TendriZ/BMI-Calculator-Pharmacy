@@ -1,6 +1,7 @@
 {
     "version": 2,
     "framework": null,
+    "buildCommand": "composer install --no-dev --optimize-autoloader",
     "builds": [
         {
             "src": "api/index.php",
@@ -33,7 +34,6 @@
         "SESSION_DRIVER": "cookie",
         "QUEUE_CONNECTION": "sync",
         "VIEW_COMPILED_PATH": "/tmp",
-        "CACHE_PREFIX": "",
         "LOG_CHANNEL": "stderr"
     }
 }
