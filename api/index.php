@@ -1,9 +1,11 @@
 <?php
 
-// Sesuaikan path agar Laravel bisa dijalankan dari folder api/
 define('LARAVEL_START', microtime(true));
 
-// Bootstrap Laravel dari lokasi yang benar
+// WAJIB: Load Composer autoloader dulu sebelum apapun
+require_once __DIR__ . '/../vendor/autoload.php';
+
+// Baru bootstrap Laravel
 $app = require_once __DIR__ . '/../bootstrap/app.php';
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
