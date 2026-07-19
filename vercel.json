@@ -1,39 +1,11 @@
 {
     "version": 2,
-    "framework": null,
-    "buildCommand": "composer install --no-dev --optimize-autoloader",
-    "builds": [
-        {
-            "src": "api/index.php",
-            "use": "vercel-php@0.6.2",
-            "config": {
-                "maxDuration": 30
-            }
-        }
-    ],
+    "outputDirectory": "public",
+    "buildCommand": "echo 'static build'",
     "routes": [
         {
-            "src": "/build/(.*)",
-            "dest": "/public/build/$1"
-        },
-        {
-            "src": "/(.*\\.(css|js|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))",
-            "dest": "/public/$1"
-        },
-        {
             "src": "/(.*)",
-            "dest": "/api/index.php"
+            "dest": "/$1"
         }
-    ],
-    "env": {
-        "APP_ENV": "production",
-        "APP_DEBUG": "true",
-        "APP_KEY": "base64:BYoHWUag8pMrZkvw+8k5dmsRjyLjqrMWYN/fjzjHxjQ=",
-        "APP_URL": "https://bmi-calculator-pharmacy.vercel.app",
-        "CACHE_STORE": "array",
-        "SESSION_DRIVER": "cookie",
-        "QUEUE_CONNECTION": "sync",
-        "VIEW_COMPILED_PATH": "/tmp",
-        "LOG_CHANNEL": "stderr"
-    }
+    ]
 }
