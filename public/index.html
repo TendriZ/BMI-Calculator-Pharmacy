@@ -492,6 +492,39 @@
     })
   }
 
+  // Custom Alert Modal Functions
+  function showCustomAlert() {
+      const modal = document.getElementById('custom-alert-modal');
+      const backdrop = document.getElementById('modal-backdrop');
+      const box = document.getElementById('modal-box');
+      
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      
+      // Delay sedikit biar transition Tailwind bisa menangkap perubahan dari display:none
+      setTimeout(() => {
+          backdrop.classList.replace('opacity-0', 'opacity-100');
+          box.classList.replace('scale-95', 'scale-100');
+          box.classList.replace('opacity-0', 'opacity-100');
+      }, 10);
+  }
+
+  function hideCustomAlert() {
+      const modal = document.getElementById('custom-alert-modal');
+      const backdrop = document.getElementById('modal-backdrop');
+      const box = document.getElementById('modal-box');
+
+      backdrop.classList.replace('opacity-100', 'opacity-0');
+      box.classList.replace('scale-100', 'scale-95');
+      box.classList.replace('opacity-100', 'opacity-0');
+
+      // Tunggu animasi selesai baru di-hide
+      setTimeout(() => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+      }, 300);
+  }
+
   // Calculator Script
   function hitungTerapi() {
       const berat       = parseFloat(document.getElementById('berat').value);
@@ -505,7 +538,7 @@
           setTimeout(() => btn.style.transform = 'translateX(5px)', 80);
           setTimeout(() => btn.style.transform = 'translateX(-3px)', 160);
           setTimeout(() => btn.style.transform = 'translateX(0)', 240);
-          alert('Mohon isi semua parameter terlebih dahulu!');
+          showCustomAlert();
           return;
       }
 
@@ -626,5 +659,25 @@
     stagger: 0.1,
   });
 </script>
+
+<!-- CUSTOM ALERT MODAL -->
+<div id="custom-alert-modal" class="fixed inset-0 z-[99] hidden items-center justify-center">
+  <div id="modal-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+  <div id="modal-box" class="relative bg-white w-full max-w-sm mx-4 rounded-[2rem] p-8 shadow-2xl scale-95 opacity-0 transition-all duration-300 border-[1.5px] border-salmon/30 flex flex-col items-center text-center">
+    <div class="h-16 w-16 rounded-full bg-salmon/20 text-maroon flex items-center justify-center mb-6">
+      <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+      </svg>
+    </div>
+    <h3 class="text-xl font-extrabold text-maroon mb-2">Data Belum Lengkap</h3>
+    <p class="text-dark/70 text-sm leading-relaxed mb-8">
+      Mohon isi semua parameter klinis (Berat Badan, Kadar Gula, dll) sebelum melakukan kalkulasi dosis.
+    </p>
+    <button onclick="hideCustomAlert()" class="w-full rounded-xl bg-maroon px-6 py-3.5 text-sm font-bold tracking-widest text-white uppercase transition-all hover:bg-maroon/90 shadow-[0_8px_16px_rgba(100,6,7,0.2)] hover:shadow-[0_4px_8px_rgba(100,6,7,0.2)] active:scale-95">
+      Saya Mengerti
+    </button>
+  </div>
+</div>
+
 </body>
 </html>
