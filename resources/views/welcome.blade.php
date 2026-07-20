@@ -81,7 +81,7 @@
 
 <!-- HEADER / NAV -->
 <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-salmon/20">
-  <div class="mx-auto flex h-16 max-w-7xl items-center gap-8 px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto flex h-16 w-full max-w-[1440px] items-center gap-8 px-6 sm:px-10 lg:px-12">
     <a class="flex items-center gap-2 text-maroon font-bold text-xl tracking-tight" href="#">
       <!-- Ikon Medis/Daun sebagai Logo Sementara -->
       <svg class="h-7 w-7 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
