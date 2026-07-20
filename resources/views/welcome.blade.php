@@ -352,7 +352,7 @@
   <div class="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-12 py-16">
     <div class="lg:flex lg:items-start lg:gap-8">
       <!-- Kolom Logo -->
-      <div class="text-maroon flex items-center gap-2 font-bold text-xl tracking-tight lg:w-1/4">
+      <div class="text-maroon flex items-center gap-2 font-bold text-xl tracking-tight">
         <svg class="h-8 w-8 text-green shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
         </svg>
@@ -377,7 +377,7 @@
             <form class="w-full">
               <label for="UserEmail" class="sr-only"> Email </label>
               <div class="border border-salmon/30 bg-cream/30 p-1.5 focus-within:ring-2 focus-within:ring-maroon sm:flex sm:items-center sm:gap-2 rounded-xl transition-all">
-                <input type="email" id="UserEmail" placeholder="email_kampus@universitas.ac.id" class="w-full border-none bg-transparent focus:border-transparent focus:ring-transparent sm:text-sm px-4 text-dark placeholder:text-dark/40" />
+                <input type="email" id="UserEmail" placeholder="email_kampus@universitas.ac.id" class="w-full border-none bg-transparent focus:outline-none focus:border-transparent focus:ring-transparent sm:text-sm px-4 text-dark placeholder:text-dark/40" />
                 <button class="mt-1 w-full rounded-lg bg-maroon px-6 py-3 text-xs font-bold tracking-widest text-white uppercase transition-all hover:bg-maroon/90 sm:mt-0 sm:w-auto sm:shrink-0 shadow-md">
                   Berlangganan
                 </button>
