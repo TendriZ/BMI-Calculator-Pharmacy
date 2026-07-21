@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-maroon: #640607;
+  --color-salmon: #E09184;
+  --color-green: #485D36;
+  --color-crimson: #C63D4D;
+  --color-cream: #F6F4E6;
+  --color-dark: #3B0A0A;
+}
+
+:root {
+  --maroon:  #640607;
+  --salmon:  #E09184;
+  --green:   #485D36;
+  --crimson: #C63D4D;
+  --cream:   #F6F4E6;
+  --text-dark:  #3B0A0A;
+  --text-muted: rgba(100, 6, 7, 0.45);
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--text-dark);
+  /* Background Pattern Lembut */
+  background-image: linear-gradient(to right, rgba(224,145,132,0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(224,145,132,0.1) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+/* --- Style Kalkulator --- */
+.step-content { transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out; }
+.hidden-step { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; visibility: hidden; }
+.active-step { opacity: 1; transform: translateY(0); position: relative; visibility: visible; }
+
+.btn-primary { background: linear-gradient(135deg, var(--maroon), #8a0a0b); color: white; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(100, 6, 7, 0.28); }
+.btn-primary:hover { box-shadow: 0 6px 22px rgba(100, 6, 7, 0.4); transform: translateY(-1px); filter: brightness(1.1); }
+
+.input-field { background: rgba(255, 252, 248, 0.9); border: 1.5px solid rgba(224, 145, 132, 0.45); color: var(--text-dark); transition: border-color 0.2s, box-shadow 0.2s; }
+.input-field::placeholder { color: rgba(100, 6, 7, 0.25); }
+.input-field:focus { outline: none; border-color: var(--maroon); box-shadow: 0 0 0 3px rgba(100, 6, 7, 0.1); }
+
+.stat-card { border: 1.5px solid rgba(224, 145, 132, 0.3); background: white; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.stat-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(100, 6, 7, 0.1); }
+
+.stepper-line { flex: 1; height: 4px; background: rgba(224, 145, 132, 0.3); border-radius: 2px; margin: 0 8px; transition: background 0.4s ease; }
+.stepper-line.done { background: var(--maroon); }
+
+.step-circle { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem; transition: all 0.35s ease; flex-shrink: 0; }
+.step-circle.active { background: rgba(100, 6, 7, 0.12); color: var(--maroon); }
+.step-circle.inactive { background: rgba(224, 145, 132, 0.15); color: var(--salmon); }
+.step-circle.done { background: var(--maroon); color: white; }
