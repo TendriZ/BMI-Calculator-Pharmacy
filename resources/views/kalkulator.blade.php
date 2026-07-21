@@ -83,7 +83,7 @@
 <!-- HEADER / NAV -->
 <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-salmon/20">
   <div class="mx-auto flex h-16 w-full max-w-[1440px] items-center gap-8 px-6 sm:px-10 lg:px-12">
-    <a class="flex items-center gap-2 text-maroon font-bold text-xl tracking-tight" href="/">
+    <a class="flex items-center gap-2 text-maroon font-bold text-xl tracking-tight" href="{{ route('landing') }}">
       <!-- Ikon Medis/Daun sebagai Logo Sementara -->
       <svg class="h-7 w-7 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -94,9 +94,9 @@
     <div class="flex flex-1 items-center justify-end md:justify-between">
       <nav aria-label="Global" class="hidden md:block">
         <ul class="flex items-center gap-6 text-sm font-medium">
-          <li><a class="text-dark/70 transition hover:text-maroon" href="#tentang">Tentang Produk</a></li>
-          <li><a class="text-dark/70 transition hover:text-maroon" href="#keunggulan">Keunggulan</a></li>
-          <li><a class="text-dark/70 transition hover:text-maroon" href="#kalkulator">Kalkulator Dosis</a></li>
+          <li><a class="text-dark/70 transition hover:text-maroon" href="{{ route('landing') }}#tentang">Tentang Produk</a></li>
+          <li><a class="text-dark/70 transition hover:text-maroon" href="{{ route('landing') }}#keunggulan">Keunggulan</a></li>
+          <li><a class="text-dark/70 transition hover:text-maroon font-bold text-maroon" href="#kalkulator">Kalkulator Dosis</a></li>
         </ul>
       </nav>
 
@@ -120,160 +120,17 @@
 <!-- MOBILE NAV -->
 <nav class="hidden border-b border-salmon/20 bg-white peer-checked:block md:hidden">
   <ul class="space-y-1 px-4 py-4 text-sm font-medium">
-    <li><a href="#tentang" class="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">Tentang Produk</a></li>
-    <li><a href="#keunggulan" class="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">Keunggulan</a></li>
-    <li><a href="#kalkulator" class="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">Kalkulator Dosis</a></li>
+    <li><a href="{{ route('landing') }}#tentang" class="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">Tentang Produk</a></li>
+    <li><a href="{{ route('landing') }}#keunggulan" class="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">Keunggulan</a></li>
+    <li><a href="#kalkulator" class="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon font-bold text-maroon">Kalkulator Dosis</a></li>
   </ul>
 </nav>
 
-<!-- HERO SECTION -->
-<section class="overflow-hidden sm:grid sm:grid-cols-2 lg:h-[85vh] items-center">
-  <div class="p-8 md:p-12 lg:px-16 lg:py-24 relative">
-    <div class="absolute inset-0 -z-10" style="background: radial-gradient(circle 500px at 0% 0%, rgba(72,93,54,0.05), transparent);"></div>
-    <div class="max-w-xl mx-auto sm:mx-0 text-center sm:text-left flex flex-col items-center sm:items-start">
-      
-      <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full border mb-6 text-green border-green/30 bg-green/10">
-        Inovasi Terapi Adjuvant
-      </span>
-
-      <h1 class="text-3xl font-extrabold text-maroon md:text-5xl leading-tight">
-        Kendalikan <span class="text-crimson">Gula Darah</span> Lebih Praktis & Terukur
-      </h1>
-
-      <p class="mt-4 text-dark/80 md:mt-6 md:text-lg leading-relaxed">
-        Pendamping terapi medis Anda dalam bentuk permen yang inovatif. Diformulasikan khusus untuk membantu mengelola kadar gula darah dengan <strong class="text-crimson">dosis senyawa yang presisi</strong>.
-      </p>
-
-      <!-- Trust Badges -->
-      <div class="mt-6 w-full flex flex-wrap items-center justify-center sm:justify-between gap-y-3 text-xs font-semibold text-dark/60">
-        <span class="inline-flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Berbasis Riset Klinis
-        </span>
-        <span class="hidden sm:inline text-salmon/40">|</span>
-        <span class="inline-flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-          Standar Farmasi
-        </span>
-        <span class="hidden sm:inline text-salmon/40">|</span>
-        <span class="inline-flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          100% Halal
-        </span>
-      </div>
-
-      <div class="mt-8 md:mt-10 flex gap-4">
-        <a href="#kalkulator" class="inline-block rounded-full bg-maroon px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-crimson shadow-lg shadow-maroon/30">
-          Mulai Kalkulasi
-        </a>
-        <a href="#keunggulan" class="inline-flex items-center justify-center rounded-full bg-white border-2 border-salmon/30 px-8 py-3.5 text-sm font-semibold text-maroon transition hover:bg-salmon/10">
-          Pelajari Lebih Lanjut
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Hero Image (Gambar lab/medis/permen sebagai ilustrasi) -->
-  <img alt="Medical Concept" src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&q=80&w=1160" class="h-64 w-full object-cover sm:h-full opacity-90" />
-</section>
-
-<!-- STATS SECTION -->
-<section id="tentang" class="bg-white border-y border-salmon/20">
-  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-3xl text-center">
-      <h2 class="text-2xl font-bold text-maroon sm:text-3xl">Dikembangkan Berdasarkan Riset</h2>
-      <p class="mt-4 text-dark/70 sm:text-lg">Formulasi optimal yang dirancang sebagai terapi pendamping pengobatan utama Anda.</p>
-    </div>
-
-    <dl class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      <!-- Card 1 -->
-      <div>
-        <div class="flex h-full flex-col rounded-2xl border border-salmon/50 bg-cream/30 px-4 py-8 text-center hover:scale-105 transition-transform duration-300 cursor-default shadow-sm hover:shadow-md">
-          <dt class="order-last text-sm font-medium text-dark/70 mt-2">Bahan Aktif</dt>
-          <dd class="text-3xl font-extrabold text-green">100%</dd>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div>
-        <div class="flex h-full flex-col rounded-2xl border border-salmon/50 bg-cream/30 px-4 py-8 text-center hover:scale-105 transition-transform duration-300 cursor-default shadow-sm hover:shadow-md">
-          <dt class="order-last text-sm font-medium text-dark/70 mt-2">Dosis Terukur</dt>
-          <dd class="text-3xl font-extrabold text-green">Presisi</dd>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div>
-        <div class="flex h-full flex-col rounded-2xl border border-salmon/50 bg-cream/30 px-4 py-8 text-center hover:scale-105 transition-transform duration-300 cursor-default shadow-sm hover:shadow-md">
-          <dt class="order-last text-sm font-medium text-dark/70 mt-2">Sifat Terapi</dt>
-          <dd class="text-3xl font-extrabold text-green">Adjuvant</dd>
-        </div>
-      </div>
-      <!-- Card 4 -->
-      <div>
-        <div class="flex h-full flex-col rounded-2xl border border-salmon/50 bg-cream/30 px-4 py-8 text-center hover:scale-105 transition-transform duration-300 cursor-default shadow-sm hover:shadow-md">
-          <dt class="order-last text-sm font-medium text-dark/70 mt-2">Bentuk Sediaan</dt>
-          <dd class="text-3xl font-extrabold text-green">Permen</dd>
-        </div>
-      </div>
-    </dl>
-  </div>
-</section>
-
-<!-- FEATURES SECTION -->
-<section id="keunggulan">
-  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-    <div class="mx-auto max-w-2xl text-center">
-      <h2 class="text-3xl font-bold text-maroon sm:text-4xl">Mengapa Memilih Formulasi Kami?</h2>
-      <p class="mt-4 text-lg text-dark/80">Pendekatan inovatif untuk kepatuhan terapi yang lebih baik tanpa mengorbankan akurasi klinis.</p>
-    </div>
-
-    <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-      <!-- Feature 1 -->
-      <div>
-        <div class="h-full rounded-2xl border border-salmon/50 bg-white p-8 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 cursor-default">
-          <div class="inline-flex rounded-xl bg-green/10 p-3 text-green">
-            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-            </svg>
-          </div>
-          <h3 class="mt-5 text-xl font-bold text-maroon">Bentuk Permen Inovatif</h3>
-          <p class="mt-3 text-dark/70 leading-relaxed">Sangat praktis dikonsumsi kapan saja dan di mana saja. Meningkatkan kenyamanan pasien dibandingkan bentuk sediaan konvensional.</p>
-        </div>
-      </div>
-
-      <!-- Feature 2 -->
-      <div>
-        <div class="h-full rounded-2xl border border-salmon/50 bg-white p-8 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 cursor-default">
-          <div class="inline-flex rounded-xl bg-green/10 p-3 text-green">
-            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-            </svg>
-          </div>
-          <h3 class="mt-5 text-xl font-bold text-maroon">Akurasi Dosis Tinggi</h3>
-          <p class="mt-3 text-dark/70 leading-relaxed">Meskipun berbentuk permen, setiap kepingnya diproduksi dengan standar farmasi untuk memastikan konsentrasi senyawa yang presisi.</p>
-        </div>
-      </div>
-
-      <!-- Feature 3 -->
-      <div>
-        <div class="h-full rounded-2xl border border-salmon/50 bg-white p-8 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 cursor-default">
-          <div class="inline-flex rounded-xl bg-green/10 p-3 text-green">
-            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-            </svg>
-          </div>
-          <h3 class="mt-5 text-xl font-bold text-maroon">Terapi Adjuvant (Pendamping)</h3>
-          <p class="mt-3 text-dark/70 leading-relaxed">Bukan untuk menggantikan obat utama, melainkan bekerja sinergis untuk membantu optimalisasi penurunan kadar gula darah.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- KALKULATOR SECTION (Pengganti Pricing) -->
-<section id="kalkulator" class="relative py-16 lg:py-24">
+<section id="kalkulator" class="relative py-16 lg:py-24 min-h-[calc(100vh-4rem)] flex items-center justify-center">
   <div class="absolute inset-0 bg-white/50 backdrop-blur-sm -z-10 border-y border-salmon/20"></div>
   
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center w-full">
     
     <!-- Judul Section -->
     <div class="text-center space-y-3 max-w-xl mb-12">

@@ -3,3 +3,4 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('index');})->name('landing');
+Route::get('/kalkulator', function () {return view('kalkulator');})->name('kalkulator');

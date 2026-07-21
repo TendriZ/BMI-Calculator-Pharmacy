@@ -83,7 +83,7 @@
 <!-- HEADER / NAV -->
 <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-salmon/20">
   <div class="mx-auto flex h-16 w-full max-w-[1440px] items-center gap-8 px-6 sm:px-10 lg:px-12">
-    <a class="flex items-center gap-2 text-maroon font-bold text-xl tracking-tight" href="/">
+    <a class="flex items-center gap-2 text-maroon font-bold text-xl tracking-tight" href="{{ route('landing') }}">
       <!-- Ikon Medis/Daun sebagai Logo Sementara -->
       <svg class="h-7 w-7 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -96,7 +96,7 @@
         <ul class="flex items-center gap-6 text-sm font-medium">
           <li><a class="text-dark/70 transition hover:text-maroon" href="#tentang">Tentang Produk</a></li>
           <li><a class="text-dark/70 transition hover:text-maroon" href="#keunggulan">Keunggulan</a></li>
-          <li><a class="text-dark/70 transition hover:text-maroon" href="#kalkulator">Kalkulator Dosis</a></li>
+          <li><a class="text-dark/70 transition hover:text-maroon font-bold text-maroon" href="{{ route('kalkulator') }}">Kalkulator Mode Penuh</a></li>
         </ul>
       </nav>
 
@@ -122,7 +122,7 @@
   <ul class="space-y-1 px-4 py-4 text-sm font-medium">
     <li><a href="#tentang" class="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">Tentang Produk</a></li>
     <li><a href="#keunggulan" class="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">Keunggulan</a></li>
-    <li><a href="#kalkulator" class="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">Kalkulator Dosis</a></li>
+    <li><a href="{{ route('kalkulator') }}" class="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon font-bold text-maroon">Kalkulator Mode Penuh</a></li>
   </ul>
 </nav>
 
