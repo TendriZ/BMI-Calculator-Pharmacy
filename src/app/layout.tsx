@@ -13,9 +13,6 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Kalkulator Terapi Tambahan | Permen Penurun Gula Darah",
   description: "Estimasi kebutuhan terapi adjuvant penurun kadar gula darah.",
-  icons: {
-    icon: '/favicon.png',
-  },
 };
 
 export default function RootLayout({
