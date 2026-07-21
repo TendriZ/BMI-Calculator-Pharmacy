@@ -7,6 +7,8 @@
   --color-crimson: #C63D4D;
   --color-cream: #F6F4E6;
   --color-dark: #3B0A0A;
+  
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 :root {
