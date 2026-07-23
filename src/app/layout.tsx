@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`scroll-smooth ${jakarta.variable}`}>
+    <html lang="id" className={`scroll-smooth ${jakarta.variable}`} data-scroll-behavior="smooth">
       <body className="antialiased font-sans min-h-full flex flex-col selection:bg-salmon/30">
         <Header />
         <main className="flex-1">
