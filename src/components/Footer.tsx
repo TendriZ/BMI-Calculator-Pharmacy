@@ -54,7 +54,7 @@ export default function Footer() {
                 <p className="font-bold text-maroon">Tim Peneliti</p>
                 <ul className="mt-6 space-y-4 text-sm">
                   <li><a href="https://www.linkedin.com/in/faradillah-sabil-321ba8321?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" className="text-dark/70 transition hover:text-maroon">Faradillah Ermyne Sabil</a></li>
-                  <li><a href="#" className="text-dark/70 transition hover:text-maroon">Anggota Dua</a></li>
+                  <li><a href="https://www.linkedin.com/in/abdullah-fakhrizal-57a1b1319/" target="_blank" rel="noopener noreferrer" className="text-dark/70 transition hover:text-maroon">Abdullah Fakhrizal</a></li>
                   <li><a href="#" className="text-dark/70 transition hover:text-maroon">Anggota Tiga</a></li>
                 </ul>
               </div>
@@ -63,9 +63,9 @@ export default function Footer() {
               <div className="col-span-2 sm:col-span-1">
                 <p className="font-bold text-maroon">Afiliasi Riset</p>
                 <ul className="mt-6 space-y-4 text-sm">
-                  <li><span className="text-dark/70 block">Universitas Airlangga</span></li>
-                  <li><span className="text-dark/70 block">Fakultas Farmasi</span></li>
-                  <li><span className="text-dark/70 block">Gedung Nanizar</span></li>
+                  <li><a href="https://www.unair.ac.id/" target="_blank" rel="noopener noreferrer" className="text-dark/70 transition hover:text-maroon">Universitas Airlangga</a></li>
+                  <li><a href="https://unair.ac.id/fakultas-farmasi/" target="_blank" rel="noopener noreferrer" className="text-dark/70 transition hover:text-maroon">Fakultas Farmasi</a></li>
+                  <li><a href="https://www.youtube.com/shorts/c2n_uj04I1I" target="_blank" rel="noopener noreferrer" className="text-dark/70 transition hover:text-maroon">Gedung Nanizar</a></li>
                 </ul>
               </div>
 
