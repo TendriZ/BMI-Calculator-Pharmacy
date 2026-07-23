@@ -24,7 +24,6 @@ export default function Home() {
     // 1. HERO
     const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     heroTl
-      .from('header', { opacity: 0, y: -20, duration: 0.5 })
       .from('#hero span', { opacity: 0, y: -16, duration: 0.6 })
       .from('#hero h1', { opacity: 0, y: 50, duration: 0.8 }, '-=0.3')
       .from('#hero p', { opacity: 0, y: 30, duration: 0.6 }, '-=0.4')
@@ -73,13 +72,7 @@ export default function Home() {
       y: 40,
     });
 
-    // 5. FOOTER
-    gsap.from('footer .grid > div', {
-      scrollTrigger: makeST('footer', { start: 'top 95%', end: 'top 60%' }),
-      opacity: 0,
-      x: -30,
-      stagger: 0.1,
-    });
+
   }, { scope: container });
 
   return (
