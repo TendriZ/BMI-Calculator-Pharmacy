@@ -11,8 +11,18 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://glucersen.vercel.app"),
   title: "GLUCERSEN | Sublingual Film for Diabetes (Muntingia calabura L.)",
   description: "Inovasi sediaan sublingual film ekstrak daun kersen (Muntingia calabura L.) dengan aktivitas antioksidan sebagai terapi pendamping (adjuvant) pengontrol gula darah.",
+  icons: {
+    icon: "/logo-glucersen.png",
+    apple: "/logo-glucersen.png",
+  },
+  openGraph: {
+    title: "GLUCERSEN | Sublingual Film for Diabetes",
+    description: "Inovasi sediaan sublingual film ekstrak daun kersen (Muntingia calabura L.) dengan aktivitas antioksidan sebagai terapi pendamping (adjuvant) pengontrol gula darah.",
+    images: [{ url: "/logo-glucersen.png" }],
+  },
 };
 
 export default function RootLayout({
