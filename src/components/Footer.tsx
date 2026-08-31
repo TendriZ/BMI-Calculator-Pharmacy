@@ -52,9 +52,9 @@ export default function Footer() {
               <div className="col-span-1">
                 <p className="font-bold text-maroon text-sm tracking-wide">Afiliasi Riset</p>
                 <ul className="mt-5 space-y-3.5 text-sm">
-                  <li><a href="https://www.unair.ac.id/" target="_blank" rel="noopener noreferrer" className="text-dark/70 transition hover:text-maroon">Universitas Airlangga</a></li>
-                  <li><a href="https://unair.ac.id/fakultas-farmasi/" target="_blank" rel="noopener noreferrer" className="text-dark/70 transition hover:text-maroon">Fakultas Farmasi</a></li>
-                  <li><a href="https://www.youtube.com/shorts/c2n_uj04I1I" target="_blank" rel="noopener noreferrer" className="text-dark/70 transition hover:text-maroon">Gedung Nanizar</a></li>
+                  <li><a href="https://www.unair.ac.id/" target="_blank" rel="noopener noreferrer" className="text-dark/70 underline decoration-dark/30 underline-offset-2 transition hover:text-maroon hover:decoration-maroon">Universitas Airlangga</a></li>
+                  <li><a href="https://unair.ac.id/fakultas-farmasi/" target="_blank" rel="noopener noreferrer" className="text-dark/70 underline decoration-dark/30 underline-offset-2 transition hover:text-maroon hover:decoration-maroon">Fakultas Farmasi</a></li>
+                  <li><a href="https://www.youtube.com/shorts/c2n_uj04I1I" target="_blank" rel="noopener noreferrer" className="text-dark/70 underline decoration-dark/30 underline-offset-2 transition hover:text-maroon hover:decoration-maroon">Gedung Nanizar</a></li>
                 </ul>
               </div>
 
@@ -65,9 +65,19 @@ export default function Footer() {
                   <li>
                     <a
                       href="mailto:glucersen2026@gmail.com"
-                      className="inline-flex items-center gap-1.5 text-dark/70 transition hover:text-maroon font-medium hover:underline"
+                      className="inline-flex items-center gap-1.5 text-dark/70 underline decoration-dark/30 underline-offset-2 transition hover:text-maroon hover:decoration-maroon font-medium"
                     >
                       <span>glucersen2026@gmail.com</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/glucersen.id?igsi=MWtsZW9ramlydGs2cg%3D%3D&utm_source=qr"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-dark/70 underline decoration-dark/30 underline-offset-2 transition hover:text-maroon hover:decoration-maroon font-medium"
+                    >
+                      <span>@glucersen.id</span>
                     </a>
                   </li>
                 </ul>
