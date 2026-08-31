@@ -10,10 +10,10 @@ import Calculator from '@/components/Calculator';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const [activeImage, setActiveImage] = useState<1 | 2>(1);
   const [isMuted, setIsMuted] = useState(true);
   const container = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
 
   const toggleSound = () => {
     if (videoRef.current) {
@@ -173,29 +173,25 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* HERO PRODUCT SHOWCASE (DUAL-VIEW MOCKUP) */}
+        
+        {/* HERO VIDEO SHOWCASE */}
         <div id="hero-image-wrapper" className="relative h-[380px] sm:h-full w-full flex items-center justify-center p-4 sm:p-6 lg:p-10">
           {/* Subtle background aura */}
           <div className="absolute inset-4 sm:inset-8 bg-gradient-to-tr from-salmon/20 via-green/10 to-maroon/10 rounded-[2.5rem] blur-xl -z-10" />
 
-          <div className="relative w-full h-full max-h-[540px] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(100,6,7,0.15)] border-2 border-white/80 group bg-slate-100">
-            {/* Foto 1: Nature / Botanical View */}
-            <img
-              src="/glucersen-product-1.jpg"
-              alt="GLUCERSEN Sublingual Film - Nature & Botanical Formulation View"
-              className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-in-out ${
-                activeImage === 1 ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 pointer-events-none z-0'
-              }`}
-            />
-
-            {/* Foto 2: Clean Packaging View */}
-            <img
-              src="/glucersen-product-2.jpg"
-              alt="GLUCERSEN Sublingual Film - Packaging & Strip View"
-              className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-in-out ${
-                activeImage === 2 ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 pointer-events-none z-0'
-              }`}
-            />
+          <div className="relative w-full h-full max-h-[540px] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(100,6,7,0.15)] border-2 border-white/80 group bg-black">
+            <video
+              ref={heroVideoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              poster="/glucersen-product-1.jpg"
+              className="absolute inset-0 h-full w-full object-cover"
+            >
+              <source src="/promotion-vid.mp4" type="video/mp4" />
+            </video>
 
             {/* Top Floating Badge */}
             <div className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-salmon/30 shadow-md">
@@ -204,40 +200,6 @@ export default function Home() {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green"></span>
               </span>
               <span className="text-xs font-bold text-maroon tracking-wide">Inovasi Sublingual Film</span>
-            </div>
-
-            {/* Dual-View Switcher Controls */}
-            <div className="absolute bottom-1.5 inset-x-1 z-20 flex items-center justify-between gap-2 p-1.5 sm:p-2 rounded-2xl bg-white/90 backdrop-blur-md border border-salmon/30 shadow-lg">
-              <div className="flex gap-1.5 sm:gap-2">
-                <button
-                  type="button"
-                  onClick={() => setActiveImage(1)}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                    activeImage === 1
-                      ? 'bg-maroon text-white shadow-md scale-102'
-                      : 'bg-cream/60 text-dark/70 hover:bg-cream hover:text-maroon'
-                  }`}
-                  title="Lihat foto dengan latar daun kersen"
-                >
-                  <span>Nature View</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveImage(2)}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                    activeImage === 2
-                      ? 'bg-maroon text-white shadow-md scale-102'
-                      : 'bg-cream/60 text-dark/70 hover:bg-cream hover:text-maroon'
-                  }`}
-                  title="Lihat foto fokus kemasan"
-                >
-                  <span>Packaging View</span>
-                </button>
-              </div>
-
-              <div className="flex items-center gap-1 text-[11px] font-semibold text-dark/60 pr-2">
-                <span className="text-maroon font-bold">{activeImage}</span> / 2
-              </div>
             </div>
           </div>
         </div>
