@@ -65,10 +65,10 @@ export default function Footer() {
                   {/* Email Icon */}
                   <a
                     href="mailto:glucersen2026@gmail.com"
-                    className="flex items-center justify-center w-10 h-10 rounded-full bg-cream/60 border border-salmon/30 text-dark/60 transition hover:bg-maroon hover:text-white hover:border-maroon hover:shadow-md"
+                    className="relative z-10 cursor-pointer flex items-center justify-center w-10 h-10 rounded-full bg-cream/60 border border-salmon/30 text-dark/60 transition hover:bg-maroon hover:text-white hover:border-maroon hover:shadow-md active:scale-95"
                     title="glucersen2026@gmail.com"
                   >
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+                    <svg className="w-5 h-5 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                     </svg>
                   </a>
@@ -77,10 +77,10 @@ export default function Footer() {
                     href="https://www.instagram.com/glucersen.id?igsi=MWtsZW9ramlydGs2cg%3D%3D&utm_source=qr"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-10 h-10 rounded-full bg-cream/60 border border-salmon/30 text-dark/60 transition hover:bg-maroon hover:text-white hover:border-maroon hover:shadow-md"
+                    className="relative z-10 cursor-pointer flex items-center justify-center w-10 h-10 rounded-full bg-cream/60 border border-salmon/30 text-dark/60 transition hover:bg-maroon hover:text-white hover:border-maroon hover:shadow-md active:scale-95"
                     title="@glucersen.id"
                   >
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+                    <svg className="w-5 h-5 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
                       <rect x="2" y="2" width="20" height="20" rx="5" strokeLinecap="round" strokeLinejoin="round" />
                       <circle cx="12" cy="12" r="5" strokeLinecap="round" strokeLinejoin="round" />
                       <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />

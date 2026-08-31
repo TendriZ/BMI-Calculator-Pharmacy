@@ -125,8 +125,8 @@ export default function Home() {
   return (
     <div ref={container} className="overflow-x-hidden">
       {/* HERO SECTION */}
-      <section id="hero" className="overflow-hidden sm:grid sm:grid-cols-2 lg:h-[85vh] items-center">
-        <div className="p-8 md:p-12 lg:px-16 lg:py-24 relative">
+      <section id="hero" className="overflow-hidden sm:grid sm:grid-cols-2 lg:min-h-[88vh] lg:py-8 items-center">
+        <div className="p-6 sm:p-8 md:p-10 lg:px-14 lg:py-16 relative">
           <div className="absolute inset-0 -z-10" style={{ background: 'radial-gradient(circle 500px at 0% 0%, rgba(72,93,54,0.05), transparent)' }}></div>
           <div className="max-w-xl mx-auto sm:mx-0 text-center sm:text-left flex flex-col items-center sm:items-start">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full border mb-6 text-green border-green/30 bg-green/10">
@@ -136,7 +136,7 @@ export default function Home() {
               Sublingual Film <span className="text-crimson italic font-serif block sm:inline">For Diabetes</span>
             </h1>
             <p className="mt-4 text-dark/80 md:mt-6 md:text-lg leading-relaxed">
-              Terapi pendamping berbasis ekstrak daun kersen (<em className="font-semibold text-maroon">Muntingia calabura L.</em>) dengan aktivitas antioksidan untuk mendukung kestabilan kadar glukosa darah dalam bentuk film larut cepat tanpa air.
+              Terapi pendamping berbasis ekstrak daun kersen (<em className="font-semibold text-maroon">Muntingia calabura L.</em>) dengan aktivitas antioksidan untuk mendukung kestabilan kadar glukosa darah dalam bentuk film larut cepat tanpa minum air.
             </p>
 
             <div className="mt-6 w-full flex flex-wrap items-center justify-center sm:justify-between gap-y-2.5 text-xs font-semibold text-dark/70">
@@ -175,11 +175,11 @@ export default function Home() {
         </div>
         
         {/* HERO VIDEO SHOWCASE */}
-        <div id="hero-image-wrapper" className="relative h-[380px] sm:h-full w-full flex items-center justify-center p-4 sm:p-6 lg:p-10">
+        <div id="hero-image-wrapper" className="relative h-[420px] sm:h-[480px] md:h-[540px] lg:h-[600px] w-full flex items-center justify-center p-3 sm:p-4 lg:p-6">
           {/* Subtle background aura */}
-          <div className="absolute inset-4 sm:inset-8 bg-gradient-to-tr from-salmon/20 via-green/10 to-maroon/10 rounded-[2.5rem] blur-xl -z-10" />
+          <div className="absolute inset-2 sm:inset-4 bg-gradient-to-tr from-salmon/25 via-green/10 to-maroon/15 rounded-[3rem] blur-xl -z-10" />
 
-          <div className="relative w-full h-full max-h-[540px] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(100,6,7,0.15)] border-2 border-white/80 group bg-black">
+          <div className="relative w-full h-full max-h-[600px] lg:max-h-[640px] rounded-[2.25rem] sm:rounded-[2.75rem] overflow-hidden shadow-[0_25px_60px_rgba(100,6,7,0.18)] border-2 border-white/90 group bg-black">
             <video
               ref={heroVideoRef}
               autoPlay
@@ -187,7 +187,6 @@ export default function Home() {
               muted
               playsInline
               preload="metadata"
-              poster="/glucersen-product-1.jpg"
               className="absolute inset-0 h-full w-full object-cover"
             >
               <source src="/promotion-vid.mp4" type="video/mp4" />
@@ -280,10 +279,10 @@ export default function Home() {
           <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-12">
             
             <h2 className="text-3xl font-extrabold text-maroon sm:text-4xl lg:text-5xl leading-tight tracking-tight">
-              Inovasi Terapi Bersama <span className="text-crimson italic font-serif">Glucersen</span>
+              Video Profil & Inovasi <span className="text-crimson italic font-serif">Glucersen</span>
             </h2>
             <p className="mt-4 text-dark/70 sm:text-lg leading-relaxed">
-              Pelajari keunggulan dan kemudahan penggunaan sediaan sublingual film ekstrak daun kersen (<em>Muntingia calabura L.</em>) untuk kestabilan kadar glukosa darah Anda
+              Tonton video profil riset dan inovasi pengembangan sediaan sublingual film ekstrak daun kersen (<em>Muntingia calabura L.</em>) untuk kemudahan terapi pendamping diabetes.
             </p>
           </div>
 
@@ -295,10 +294,9 @@ export default function Home() {
               muted={isMuted}
               playsInline
               preload="metadata"
-              poster="/glucersen-product-1.jpg"
               className="w-full h-auto aspect-video object-cover"
             >
-              <source src="/promotion-vid.mp4" type="video/mp4" />
+              <source src="/video-profile-glucersen.mp4" type="video/mp4" />
               Browser Anda tidak mendukung pemutaran video HTML5.
             </video>
 
