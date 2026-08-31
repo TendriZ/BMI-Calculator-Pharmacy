@@ -23,33 +23,115 @@ export default function Home() {
   };
 
   useGSAP(() => {
-    // 1. HERO ANIMATION (Snappy entrance on load)
+    // 1. HERO ANIMATION (Sequential entrance on page load)
     const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     heroTl
-      .from('.hero-badge', { opacity: 0, y: -16, duration: 0.6 })
-      .from('.hero-title', { opacity: 0, y: 24, duration: 0.7 }, '-=0.3')
-      .from('.hero-desc', { opacity: 0, y: 16, duration: 0.6 }, '-=0.4')
-      .from('.hero-features', { opacity: 0, y: 16, duration: 0.6 }, '-=0.3')
-      .from('.hero-cta', { opacity: 0, y: 16, duration: 0.5 }, '-=0.3')
-      .from('#hero-image-wrapper', { opacity: 0, scale: 0.96, duration: 0.8, ease: 'power2.out' }, '-=0.5');
+      .from('.hero-badge', { opacity: 0, y: -20, duration: 0.6 })
+      .from('.hero-title', { opacity: 0, y: 40, duration: 0.8 }, '-=0.3')
+      .from('.hero-desc', { opacity: 0, y: 25, duration: 0.6 }, '-=0.4')
+      .from('.hero-features', { opacity: 0, y: 20, duration: 0.6 }, '-=0.3')
+      .from('.hero-cta', { opacity: 0, y: 20, duration: 0.5 }, '-=0.3')
+      .from('#hero-image-wrapper', { opacity: 0, x: 50, scale: 0.94, duration: 0.9, ease: 'power2.out' }, '-=0.6');
 
-    // 2. GENTLE SECTION ENTRANCE (Trigger once, no scrub lock to prevent blank areas)
-    const sections = ['#about', '#urgency', '#formulation', '#results', '#video'];
-    sections.forEach((secId) => {
-      gsap.from(`${secId} .section-header`, {
+    // Helper for clean, non-locking scroll reveal
+    const createScrollReveal = (trigger: string, elements: string | gsap.DOMTarget, vars: gsap.TweenVars) => {
+      gsap.from(elements, {
         scrollTrigger: {
-          trigger: secId,
+          trigger,
           start: 'top 85%',
+          toggleActions: 'play none none none',
           once: true,
         },
-        opacity: 0,
-        y: 24,
-        duration: 0.6,
-        ease: 'power2.out',
+        ...vars,
       });
+    };
+
+    // 2. PILLARS ANIMATION (#about)
+    createScrollReveal('#about', '#about .section-header', {
+      opacity: 0,
+      y: 35,
+      duration: 0.7,
+      ease: 'power3.out',
+    });
+    createScrollReveal('#about .pillar-card', '#about .pillar-card', {
+      opacity: 0,
+      y: 50,
+      scale: 0.95,
+      stagger: 0.12,
+      duration: 0.8,
+      ease: 'power3.out',
     });
 
-    // 3. AUTOPLAY VIDEO ON SCROLL
+    // 3. CLINICAL URGENCY ANIMATION (#urgency)
+    createScrollReveal('#urgency', '#urgency .section-header', {
+      opacity: 0,
+      y: 35,
+      duration: 0.7,
+      ease: 'power3.out',
+    });
+    createScrollReveal('#urgency .stat-card', '#urgency .stat-card', {
+      opacity: 0,
+      y: 40,
+      scale: 0.9,
+      stagger: 0.12,
+      duration: 0.75,
+      ease: 'back.out(1.4)',
+    });
+    createScrollReveal('#urgency .deep-dive-card', '#urgency .deep-dive-card', {
+      opacity: 0,
+      y: 45,
+      stagger: 0.18,
+      duration: 0.8,
+      ease: 'power3.out',
+    });
+
+    // 4. FORMULATION ANIMATION (#formulation)
+    createScrollReveal('#formulation', '#formulation .section-header', {
+      opacity: 0,
+      y: 35,
+      duration: 0.7,
+      ease: 'power3.out',
+    });
+    createScrollReveal('#formulation .formulation-card', '#formulation .formulation-card', {
+      opacity: 0,
+      y: 45,
+      stagger: 0.1,
+      duration: 0.75,
+      ease: 'power3.out',
+    });
+
+    // 5. RESULTS ANIMATION (#results)
+    createScrollReveal('#results', '#results .section-header', {
+      opacity: 0,
+      x: -40,
+      duration: 0.8,
+      ease: 'power3.out',
+    });
+    createScrollReveal('#results .result-card', '#results .result-card', {
+      opacity: 0,
+      y: 50,
+      scale: 0.92,
+      stagger: 0.14,
+      duration: 0.8,
+      ease: 'back.out(1.3)',
+    });
+
+    // 6. VIDEO SHOWCASE ANIMATION & AUTOPLAY (#video)
+    createScrollReveal('#video', '#video .section-header', {
+      opacity: 0,
+      y: 35,
+      duration: 0.7,
+      ease: 'power3.out',
+    });
+    createScrollReveal('#video .video-card', '#video .video-card', {
+      opacity: 0,
+      scale: 0.94,
+      y: 40,
+      duration: 0.9,
+      ease: 'power3.out',
+    });
+
+    // Autoplay on scroll reached, pause on leave
     const videoEl = videoRef.current;
     if (videoEl) {
       ScrollTrigger.create({
