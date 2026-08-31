@@ -207,7 +207,7 @@ export default function Home() {
                 icon: '🩸',
               },
               {
-                title: 'Sublingual Biofilm',
+                title: 'Sublingual Film',
                 badge: 'Mucosal Absorption',
                 desc: 'Fast-dissolving oral strip that delivers bioactive compounds directly into sublingual veins, bypassing gastrointestinal degradation.',
                 icon: '⚡',
@@ -341,8 +341,8 @@ export default function Home() {
                 title: 'Hydroxypropyl Methylcellulose',
                 latin: '(HPMC)',
                 role: 'Film-Forming Polymer',
-                desc: 'Pharmaceutical-grade hydrophilic polymer creating the ultra-thin, flexible biofilm matrix for swift oral mucosal disintegration.',
-                tag: 'Biofilm Matrix',
+                desc: 'Pharmaceutical-grade hydrophilic polymer creating the ultra-thin, flexible film matrix for swift oral mucosal disintegration.',
+                tag: 'Film Matrix',
               },
               {
                 title: 'Glycerin',
@@ -563,7 +563,7 @@ export default function Home() {
           <div className="mt-12 rounded-3xl bg-gradient-to-r from-maroon to-dark p-8 sm:p-10 text-white text-center shadow-xl border border-salmon/30">
             <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight">Conclusion & Future Impact</h3>
             <p className="mt-3 max-w-2xl mx-auto text-sm sm:text-base text-white/85 leading-relaxed">
-              <strong>GLUCERSEN</strong> demonstrates promising potential as a natural, water-free, and patient-friendly sublingual biofilm for supporting long-term diabetes management and significantly improving treatment compliance.
+              <strong>GLUCERSEN</strong> demonstrates promising potential as a natural, water-free, and patient-friendly sublingual film for supporting long-term diabetes management and significantly improving treatment compliance.
             </p>
           </div>
         </div>
