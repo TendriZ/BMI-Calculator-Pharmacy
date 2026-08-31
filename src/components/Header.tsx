@@ -28,30 +28,30 @@ export default function Header() {
             <nav aria-label="Global" className="hidden md:block">
               <ul className="flex items-center gap-6 text-sm font-medium">
                 <li>
-                  <Link href="/#tentang" className="text-dark/70 transition hover:text-maroon">
-                    Tentang Produk
+                  <Link href="/#about" className="text-dark/70 transition hover:text-maroon">
+                    About & Research
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#keunggulan" className="text-dark/70 transition hover:text-maroon">
-                    Keunggulan
+                  <Link href="/#urgency" className="text-dark/70 transition hover:text-maroon">
+                    Clinical Urgency
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#formulation" className="text-dark/70 transition hover:text-maroon">
+                    Formulation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#results" className="text-dark/70 transition hover:text-maroon">
+                    Results & Advantages
                   </Link>
                 </li>
                 <li>
                   <Link href="/#video" className="text-dark/70 transition hover:text-maroon">
-                    Video Inovasi
+                    Video Profile
                   </Link>
                 </li>
-                {/* <li>
-                  <Link
-                    href="/kalkulator"
-                    className={`transition hover:text-maroon ${
-                      pathname === '/kalkulator' ? 'font-bold text-maroon' : 'text-dark/70'
-                    }`}
-                  >
-                    Kalkulator Mode Penuh
-                  </Link>
-                </li> */}
               </ul>
             </nav>
 
@@ -60,6 +60,7 @@ export default function Header() {
                 type="button"
                 className="block cursor-pointer rounded-sm p-2.5 text-dark/70 transition hover:text-maroon md:hidden"
                 onClick={() => setIsOpen(!isOpen)}
+                aria-label="Toggle navigation menu"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -74,31 +75,30 @@ export default function Header() {
       <nav className={`border-b border-salmon/20 bg-white md:hidden ${isOpen ? 'block' : 'hidden'}`}>
         <ul className="space-y-1 px-4 py-4 text-sm font-medium">
           <li>
-            <Link href="/#tentang" onClick={() => setIsOpen(false)} className="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">
-              Tentang Produk
+            <Link href="/#about" onClick={() => setIsOpen(false)} className="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">
+              About & Research
             </Link>
           </li>
           <li>
-            <Link href="/#keunggulan" onClick={() => setIsOpen(false)} className="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">
-              Keunggulan
+            <Link href="/#urgency" onClick={() => setIsOpen(false)} className="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">
+              Clinical Urgency
+            </Link>
+          </li>
+          <li>
+            <Link href="/#formulation" onClick={() => setIsOpen(false)} className="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">
+              Formulation
+            </Link>
+          </li>
+          <li>
+            <Link href="/#results" onClick={() => setIsOpen(false)} className="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">
+              Results & Advantages
             </Link>
           </li>
           <li>
             <Link href="/#video" onClick={() => setIsOpen(false)} className="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">
-              Video Inovasi
+              Video Profile
             </Link>
           </li>
-          {/* <li>
-            <Link
-              href="/kalkulator"
-              onClick={() => setIsOpen(false)}
-              className={`block rounded-lg px-3 py-2 transition hover:bg-cream hover:text-maroon ${
-                pathname === '/kalkulator' ? 'font-bold text-maroon bg-cream/50' : 'text-dark/70'
-              }`}
-            >
-              Kalkulator Mode Penuh
-            </Link>
-          </li> */}
         </ul>
       </nav>
     </>
