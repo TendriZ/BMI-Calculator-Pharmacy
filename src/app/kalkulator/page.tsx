@@ -3,8 +3,8 @@ import Calculator from '@/components/Calculator';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Kalkulator Mode Penuh | GlucaDrop',
-  description: 'Kalkulator dosis permen terapi GlucaDrop mode layar penuh.',
+  title: 'Kalkulator Dosis | GLUCERSEN Sublingual Film',
+  description: 'Kalkulator estimasi dosis sublingual film Glucersen berbahan ekstrak daun kersen (Muntingia calabura L.).',
 };
 
 export default function KalkulatorPage() {
@@ -27,7 +27,7 @@ export default function KalkulatorPage() {
         
         <div className="text-center space-y-3 max-w-xl mx-auto mb-12">
           <h1 className="text-3xl font-extrabold tracking-tight text-maroon sm:text-4xl">Kalkulator Kebutuhan Terapi</h1>
-          <p className="text-dark/70 text-lg">Gunakan kalkulator di bawah ini untuk mengestimasi kebutuhan harian permen terapi Anda berdasarkan parameter klinis.</p>
+          <p className="text-dark/70 text-lg">Gunakan kalkulator di bawah ini untuk mengestimasi kebutuhan harian sublingual film Glucersen Anda berdasarkan parameter klinis.</p>
         </div>
 
         <Calculator />

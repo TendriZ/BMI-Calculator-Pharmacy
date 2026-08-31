@@ -83,29 +83,35 @@ export default function Home() {
           <div className="absolute inset-0 -z-10" style={{ background: 'radial-gradient(circle 500px at 0% 0%, rgba(72,93,54,0.05), transparent)' }}></div>
           <div className="max-w-xl mx-auto sm:mx-0 text-center sm:text-left flex flex-col items-center sm:items-start">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full border mb-6 text-green border-green/30 bg-green/10">
-              Inovasi Terapi Adjuvant
+              Plant-Based Adjuvant Therapy • 20 Films
             </span>
-            <h1 className="text-3xl font-extrabold text-maroon md:text-5xl leading-tight">
-              Kendalikan <span className="text-crimson">Gula Darah</span> Lebih Praktis & Terukur
+            <h1 className="text-3xl font-extrabold text-maroon md:text-5xl lg:text-6xl leading-tight">
+              Sublingual Film <span className="text-crimson italic font-serif block sm:inline">For Diabetes</span>
             </h1>
             <p className="mt-4 text-dark/80 md:mt-6 md:text-lg leading-relaxed">
-              Pendamping terapi medis Anda dalam bentuk permen yang inovatif. Diformulasikan khusus untuk membantu mengelola kadar gula darah dengan <strong className="text-crimson">dosis senyawa yang presisi</strong>.
+              Terapi pendamping berbasis ekstrak daun kersen (<em className="font-semibold text-maroon">Muntingia calabura L.</em>) dengan aktivitas antioksidan untuk mendukung kestabilan kadar glukosa darah dalam bentuk film larut cepat tanpa air.
             </p>
 
-            <div className="mt-6 w-full flex flex-wrap items-center justify-center sm:justify-between gap-y-3 text-xs font-semibold text-dark/60">
+            <div className="mt-6 w-full flex flex-wrap items-center justify-center sm:justify-between gap-y-3 text-xs font-semibold text-dark/70">
               <span className="inline-flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                Berbasis Riset Klinis
+                <svg className="w-4 h-4 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                </svg>
+                Easy to Use
               </span>
               <span className="hidden sm:inline text-salmon/40">|</span>
               <span className="inline-flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                Standar Farmasi
+                <svg className="w-4 h-4 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Quick Dissolving
               </span>
               <span className="hidden sm:inline text-salmon/40">|</span>
               <span className="inline-flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                100% Halal
+                <svg className="w-4 h-4 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                </svg>
+                No Water Needed
               </span>
             </div>
 
@@ -119,24 +125,30 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <img alt="Medical Concept" src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&q=80&w=1160" className="h-64 w-full object-cover sm:h-full opacity-90" />
+        <img alt="Glucersen Medical Research" src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&q=80&w=1160" className="h-64 w-full object-cover sm:h-full opacity-90" />
       </section>
 
       {/* STATS SECTION */}
       <section id="tentang" className="bg-white border-y border-salmon/20">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-2xl font-bold text-maroon sm:text-3xl">Dikembangkan Berdasarkan Riset</h2>
-            <p className="mt-4 text-dark/70 sm:text-lg">Formulasi optimal yang dirancang sebagai terapi pendamping pengobatan utama Anda.</p>
+            <h2 className="text-2xl font-bold text-maroon sm:text-3xl">Dikembangkan Berdasarkan Riset Farmasi</h2>
+            <p className="mt-4 text-dark/70 sm:text-lg">Formulasi sediaan film sublingual berbahan alam terstandar untuk terapi pendamping diabetes.</p>
           </div>
           <dl className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {['100%', 'Presisi', 'Adjuvant', 'Permen'].map((stat, i) => (
+            {[
+              { label: 'Bahan Aktif', value: 'M. calabura L.', sub: 'Ekstrak Daun Kersen' },
+              { label: 'Aktivitas Utama', value: 'Antioksidan', sub: 'Blood Glucose Support' },
+              { label: 'Sifat Terapi', value: 'Adjuvant', sub: 'Plant-Based Therapy' },
+              { label: 'Bentuk Sediaan', value: 'Sublingual Film', sub: '20 Films / Pack' }
+            ].map((stat, i) => (
               <div key={i}>
-                <div className="flex h-full flex-col rounded-2xl border border-salmon/50 bg-cream/30 px-4 py-8 text-center hover:scale-105 transition-transform duration-300 cursor-default shadow-sm hover:shadow-md">
-                  <dt className="order-last text-sm font-medium text-dark/70 mt-2">
-                    {i === 0 ? 'Bahan Aktif' : i === 1 ? 'Dosis Terukur' : i === 2 ? 'Sifat Terapi' : 'Bentuk Sediaan'}
+                <div className="flex h-full flex-col rounded-2xl border border-salmon/50 bg-cream/30 px-4 py-6 text-center hover:scale-105 transition-transform duration-300 cursor-default shadow-sm hover:shadow-md">
+                  <dt className="order-last text-xs sm:text-sm font-medium text-dark/70 mt-2">
+                    <span className="font-semibold text-dark/90">{stat.label}</span>
+                    <span className="block text-xs text-dark/50 mt-0.5">{stat.sub}</span>
                   </dt>
-                  <dd className="text-3xl font-extrabold text-green">{stat}</dd>
+                  <dd className="text-xl sm:text-2xl font-extrabold text-green">{stat.value}</dd>
                 </div>
               </div>
             ))}
@@ -148,14 +160,26 @@ export default function Home() {
       <section id="keunggulan">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-maroon sm:text-4xl">Mengapa Memilih Formulasi Kami?</h2>
+            <h2 className="text-3xl font-bold text-maroon sm:text-4xl">Keunggulan Formulasi Glucersen</h2>
             <p className="mt-4 text-lg text-dark/80">Pendekatan inovatif untuk kepatuhan terapi yang lebih baik tanpa mengorbankan akurasi klinis.</p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
-              { title: 'Bentuk Permen Inovatif', desc: 'Sangat praktis dikonsumsi kapan saja dan di mana saja. Meningkatkan kenyamanan pasien dibandingkan bentuk sediaan konvensional.', icon: <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" /> },
-              { title: 'Akurasi Dosis Tinggi', desc: 'Meskipun berbentuk permen, setiap kepingnya diproduksi dengan standar farmasi untuk memastikan konsentrasi senyawa yang presisi.', icon: <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /> },
-              { title: 'Terapi Adjuvant (Pendamping)', desc: 'Bukan untuk menggantikan obat utama, melainkan bekerja sinergis untuk membantu optimalisasi penurunan kadar gula darah.', icon: <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /> }
+              { 
+                title: 'Quick Dissolving Sublingual Film', 
+                desc: 'Strip film cepat larut di bawah lidah tanpa perlu air (No Water Needed). Praktis, nyaman, dan zat aktif langsung terabsorpsi cepat ke pembuluh darah.', 
+                icon: <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /> 
+              },
+              { 
+                title: 'Ekstrak Daun Kersen (M. calabura L.)', 
+                desc: 'Memiliki aktivitas antioksidan tinggi untuk mendukung penurunan kadar glukosa darah dan melindungi sel beta pankreas dari stres oksidatif.', 
+                icon: <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /> 
+              },
+              { 
+                title: 'Plant-Based Adjuvant Therapy', 
+                desc: 'Terapi pendamping nabati terstandar farmasi. Bekerja sinergis mendampingi pengobatan utama dengan presisi dosis terukur (20 films per kemasan).', 
+                icon: <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /> 
+              }
             ].map((feat, i) => (
               <div key={i}>
                 <div className="h-full rounded-2xl border border-salmon/50 bg-white p-8 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 cursor-default">
@@ -177,7 +201,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <div className="text-center space-y-3 max-w-xl mb-12">
             <h2 className="text-3xl font-extrabold tracking-tight text-maroon sm:text-4xl">Kalkulator Kebutuhan Terapi</h2>
-            <p className="text-dark/70 text-lg">Gunakan kalkulator di bawah ini untuk mengestimasi kebutuhan harian permen terapi Anda berdasarkan parameter klinis.</p>
+            <p className="text-dark/70 text-lg">Gunakan kalkulator di bawah ini untuk mengestimasi kebutuhan harian sublingual film Glucersen Anda berdasarkan parameter klinis.</p>
           </div>
           <Calculator />
         </div>

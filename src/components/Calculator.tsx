@@ -119,8 +119,8 @@ export default function Calculator() {
                     <span className="text-xs font-bold uppercase tracking-wide text-dark/50">Konsumsi Harian</span>
                     <span className="text-xs font-bold px-2 py-1 rounded-lg bg-green/10 text-green">Rekomendasi</span>
                   </div>
-                  <div className="text-4xl font-extrabold mt-2 text-maroon">{hasilHarian} pcs</div>
-                  <p className="text-xs text-dark/50">permen per hari</p>
+                  <div className="text-4xl font-extrabold mt-2 text-maroon">{hasilHarian} <span className="text-2xl font-bold">Films</span></div>
+                  <p className="text-xs text-dark/50">lembar sublingual film per hari</p>
                 </div>
 
                 <div className="stat-card rounded-2xl p-5 flex flex-col gap-1">
@@ -128,8 +128,8 @@ export default function Calculator() {
                     <span className="text-xs font-bold uppercase tracking-wide text-dark/50">Total Kebutuhan</span>
                     <span className="text-xs font-bold px-2 py-1 rounded-lg bg-crimson/10 text-crimson">14 Hari Terapi</span>
                   </div>
-                  <div className="text-4xl font-extrabold mt-2 text-maroon">{hasilTotal} pcs</div>
-                  <p className="text-xs text-dark/50">total keping permen</p>
+                  <div className="text-4xl font-extrabold mt-2 text-maroon">{hasilTotal} <span className="text-2xl font-bold">Films</span></div>
+                  <p className="text-xs text-dark/50">total lembar (~{Math.ceil(hasilTotal / 20)} pack @20 films)</p>
                 </div>
               </div>
 

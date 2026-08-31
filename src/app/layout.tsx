@@ -11,8 +11,8 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Kalkulator Terapi Tambahan | Permen Penurun Gula Darah",
-  description: "Estimasi kebutuhan terapi adjuvant penurun kadar gula darah.",
+  title: "GLUCERSEN | Sublingual Film for Diabetes (Muntingia calabura L.)",
+  description: "Inovasi sediaan sublingual film ekstrak daun kersen (Muntingia calabura L.) dengan aktivitas antioksidan sebagai terapi pendamping (adjuvant) pengontrol gula darah.",
 };
 
 export default function RootLayout({
