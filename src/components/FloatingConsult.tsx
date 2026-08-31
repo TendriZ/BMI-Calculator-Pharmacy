@@ -3,20 +3,16 @@
 import { useState } from 'react';
 
 const INSTAGRAM_USERNAME = 'glucersen.id';
-const INSTAGRAM_DM_URL = `https://ig.me/m/${INSTAGRAM_USERNAME}`;
 const PREFILLED_MESSAGE = 'Hello, I would like to consult regarding Glucersen sublingual film.';
-
-type FlowStep = 'idle' | 'copied';
 
 export default function FloatingConsult() {
   const [isOpen, setIsOpen] = useState(false);
-  const [step, setStep] = useState<FlowStep>('idle');
+  const [copied, setCopied] = useState(false);
 
-  const handleCopyAndPrepare = async () => {
+  const copyToClipboard = () => {
     try {
-      await navigator.clipboard.writeText(PREFILLED_MESSAGE);
+      navigator.clipboard.writeText(PREFILLED_MESSAGE);
     } catch {
-      // Fallback for older browsers or non-HTTPS
       const textarea = document.createElement('textarea');
       textarea.value = PREFILLED_MESSAGE;
       textarea.style.position = 'fixed';
@@ -26,22 +22,21 @@ export default function FloatingConsult() {
       document.execCommand('copy');
       document.body.removeChild(textarea);
     }
-    setStep('copied');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 3000);
   };
 
-  const handleOpenInstagram = () => {
-    window.open(INSTAGRAM_DM_URL, '_blank', 'noopener,noreferrer');
-    // Reset after a short delay so it's ready for next use
-    setTimeout(() => {
-      setStep('idle');
-      setIsOpen(false);
-    }, 600);
-  };
+  const handleConsult = () => {
+    // 1. Copy message to clipboard as backup
+    copyToClipboard();
 
-  const handleClose = () => {
+    // 2. Build URL with ?text= parameter (per reference code pattern)
+    const encodedMessage = encodeURIComponent(PREFILLED_MESSAGE);
+    const instagramUrl = `https://ig.me/m/${INSTAGRAM_USERNAME}?text=${encodedMessage}`;
+
+    // 3. Open Instagram DM with pre-filled text
+    window.open(instagramUrl, '_blank', 'noopener,noreferrer');
     setIsOpen(false);
-    // Reset step when closing
-    setTimeout(() => setStep('idle'), 300);
   };
 
   return (
@@ -72,73 +67,50 @@ export default function FloatingConsult() {
             </div>
           </div>
 
-          {step === 'idle' ? (
-            <>
-              {/* STEP 1: Show message preview + Copy button */}
-              <div className="bg-cream/70 rounded-2xl rounded-tl-xs p-3.5 mb-4 border border-salmon/25">
-                <p className="text-xs text-dark/70 font-bold flex items-center gap-1.5 mb-1.5">
-                  <span>💬</span> Prepared Inquiry:
-                </p>
-                <p className="text-xs text-dark/85 italic leading-relaxed bg-white/80 p-2.5 rounded-xl border border-salmon/20">
-                  &ldquo;{PREFILLED_MESSAGE}&rdquo;
-                </p>
-              </div>
-
+          {/* Prepared Message Box */}
+          <div className="bg-cream/70 rounded-2xl rounded-tl-xs p-3.5 mb-4 border border-salmon/25">
+            <div className="flex items-center justify-between mb-1.5">
+              <p className="text-xs text-dark/70 font-bold flex items-center gap-1.5">
+                <span>💬</span> Prepared Inquiry:
+              </p>
               <button
                 type="button"
-                onClick={handleCopyAndPrepare}
-                className="w-full flex items-center justify-center gap-2 bg-maroon hover:bg-crimson text-white font-semibold text-sm py-3 px-4 rounded-xl transition-all shadow-md shadow-maroon/25 hover:shadow-lg hover:shadow-maroon/35 active:scale-[0.98] cursor-pointer"
+                onClick={copyToClipboard}
+                className="text-[11px] font-bold text-maroon hover:text-crimson transition flex items-center gap-1 cursor-pointer"
               >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9.75a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184" />
-                </svg>
-                Step 1: Copy Message to Clipboard
-              </button>
-
-              <p className="text-[10px] text-dark/45 mt-2 text-center leading-snug">
-                Instagram does not support auto-filled messages.<br />
-                Copy first, then paste into Instagram DM.
-              </p>
-            </>
-          ) : (
-            <>
-              {/* STEP 2: Confirmation + Open Instagram */}
-              <div className="bg-green/10 rounded-2xl p-4 mb-4 border border-green/25 text-center">
-                <div className="flex justify-center mb-2">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green/20">
-                    <svg className="w-7 h-7 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                {copied ? (
+                  <span className="text-green font-bold flex items-center gap-1">
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                  </div>
-                </div>
-                <p className="text-sm font-bold text-green">Message Copied!</p>
-                <p className="text-xs text-dark/60 mt-1 leading-relaxed">
-                  Now open Instagram and <strong>paste</strong> (Ctrl+V / long-press) into the chat.
-                </p>
-              </div>
-
-              <button
-                type="button"
-                onClick={handleOpenInstagram}
-                className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#F77737] hover:opacity-90 text-white font-bold text-sm py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-[0.98] cursor-pointer"
-              >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-                  <rect x="2" y="2" width="20" height="20" rx="5" strokeLinecap="round" strokeLinejoin="round" />
-                  <circle cx="12" cy="12" r="5" strokeLinecap="round" strokeLinejoin="round" />
-                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-                </svg>
-                Step 2: Open Instagram DM
+                    Copied!
+                  </span>
+                ) : (
+                  <span>📋 Copy</span>
+                )}
               </button>
+            </div>
+            <p className="text-xs text-dark/85 italic leading-relaxed bg-white/80 p-2.5 rounded-xl border border-salmon/20">
+              &ldquo;{PREFILLED_MESSAGE}&rdquo;
+            </p>
+            <p className="text-[10px] text-dark/45 mt-1.5">
+              *Message will be auto-filled in Instagram DM. If not, simply paste (Ctrl+V).
+            </p>
+          </div>
 
-              <button
-                type="button"
-                onClick={() => setStep('idle')}
-                className="w-full text-xs text-dark/50 hover:text-dark/70 mt-2 py-1 transition cursor-pointer"
-              >
-                ← Back to copy again
-              </button>
-            </>
-          )}
+          {/* CTA Button */}
+          <button
+            type="button"
+            onClick={handleConsult}
+            className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#F77737] hover:opacity-90 text-white font-bold text-sm py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-[0.98] cursor-pointer"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+              <rect x="2" y="2" width="20" height="20" rx="5" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx="12" cy="12" r="5" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+            Chat via Instagram
+          </button>
         </div>
 
         {/* Small triangle pointer */}
@@ -150,7 +122,7 @@ export default function FloatingConsult() {
       {/* Floating Button */}
       <button
         type="button"
-        onClick={() => (isOpen ? handleClose() : setIsOpen(true))}
+        onClick={() => setIsOpen(!isOpen)}
         className={`group relative flex items-center gap-2.5 rounded-full border border-salmon/30 shadow-[0_8px_30px_rgba(100,6,7,0.22)] transition-all duration-300 cursor-pointer active:scale-95 pointer-events-auto ${
           isOpen
             ? 'bg-dark hover:bg-dark/90 text-white px-4 py-3.5'
