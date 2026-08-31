@@ -23,102 +23,33 @@ export default function Home() {
   };
 
   useGSAP(() => {
-    const makeST = (trigger: string, extraConfig = {}) => ({
-      trigger,
-      start: 'top 88%',
-      end: 'top 30%',
-      scrub: 1.5,
-      ...extraConfig,
-    });
-
-    // 1. HERO ANIMATION
+    // 1. HERO ANIMATION (Snappy entrance on load)
     const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     heroTl
       .from('.hero-badge', { opacity: 0, y: -16, duration: 0.6 })
-      .from('.hero-title', { opacity: 0, y: 30, duration: 0.7 }, '-=0.3')
-      .from('.hero-desc', { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
-      .from('.hero-features', { opacity: 0, y: 20, duration: 0.6 }, '-=0.3')
-      .from('.hero-cta', { opacity: 0, y: 20, duration: 0.5 }, '-=0.3')
-      .from('#hero-image-wrapper', { opacity: 0, scale: 0.95, duration: 0.8, ease: 'power2.out' }, '-=0.5');
+      .from('.hero-title', { opacity: 0, y: 24, duration: 0.7 }, '-=0.3')
+      .from('.hero-desc', { opacity: 0, y: 16, duration: 0.6 }, '-=0.4')
+      .from('.hero-features', { opacity: 0, y: 16, duration: 0.6 }, '-=0.3')
+      .from('.hero-cta', { opacity: 0, y: 16, duration: 0.5 }, '-=0.3')
+      .from('#hero-image-wrapper', { opacity: 0, scale: 0.96, duration: 0.8, ease: 'power2.out' }, '-=0.5');
 
-    // 2. PILLARS ANIMATION
-    gsap.from('#about h2, #about p', {
-      scrollTrigger: makeST('#about h2'),
-      opacity: 0,
-      y: 30,
-      stagger: 0.15,
-    });
-    gsap.from('#about .pillar-card', {
-      scrollTrigger: makeST('#about .pillar-card', { end: 'top 20%' }),
-      opacity: 0,
-      y: 40,
-      stagger: 0.1,
-    });
-
-    // 3. CLINICAL URGENCY ANIMATION
-    gsap.from('#urgency h2, #urgency .urgency-sub', {
-      scrollTrigger: makeST('#urgency h2'),
-      opacity: 0,
-      y: 30,
-      stagger: 0.15,
-    });
-    gsap.from('#urgency .stat-card', {
-      scrollTrigger: makeST('#urgency .stat-card', { end: 'top 35%' }),
-      opacity: 0,
-      scale: 0.95,
-      y: 30,
-      stagger: 0.12,
-    });
-    gsap.from('#urgency .deep-dive-card', {
-      scrollTrigger: makeST('#urgency .deep-dive-card', { end: 'top 25%' }),
-      opacity: 0,
-      y: 40,
-      stagger: 0.15,
+    // 2. GENTLE SECTION ENTRANCE (Trigger once, no scrub lock to prevent blank areas)
+    const sections = ['#about', '#urgency', '#formulation', '#results', '#video'];
+    sections.forEach((secId) => {
+      gsap.from(`${secId} .section-header`, {
+        scrollTrigger: {
+          trigger: secId,
+          start: 'top 85%',
+          once: true,
+        },
+        opacity: 0,
+        y: 24,
+        duration: 0.6,
+        ease: 'power2.out',
+      });
     });
 
-    // 4. FORMULATION ANIMATION
-    gsap.from('#formulation h2, #formulation p', {
-      scrollTrigger: makeST('#formulation h2'),
-      opacity: 0,
-      y: 30,
-      stagger: 0.15,
-    });
-    gsap.from('#formulation .formulation-card', {
-      scrollTrigger: makeST('#formulation .formulation-card', { end: 'top 20%' }),
-      opacity: 0,
-      y: 35,
-      stagger: 0.1,
-    });
-
-    // 5. RESULTS ANIMATION
-    gsap.from('#results h2, #results p', {
-      scrollTrigger: makeST('#results h2'),
-      opacity: 0,
-      x: -30,
-      stagger: 0.15,
-    });
-    gsap.from('#results .result-card', {
-      scrollTrigger: makeST('#results .result-card', { end: 'top 15%' }),
-      opacity: 0,
-      y: 50,
-      stagger: 0.12,
-    });
-
-    // 6. VIDEO SHOWCASE ANIMATION & SCROLL AUTOPLAY
-    gsap.from('#video h2, #video p', {
-      scrollTrigger: makeST('#video h2'),
-      opacity: 0,
-      y: 30,
-      stagger: 0.15,
-    });
-    gsap.from('#video .video-card', {
-      scrollTrigger: makeST('#video .video-card', { start: 'top 85%', end: 'top 45%' }),
-      opacity: 0,
-      scale: 0.95,
-      y: 40,
-    });
-
-    // Autoplay on scroll reached, pause on leave
+    // 3. AUTOPLAY VIDEO ON SCROLL
     const videoEl = videoRef.current;
     if (videoEl) {
       ScrollTrigger.create({
@@ -234,7 +165,7 @@ export default function Home() {
       {/* 2. 4 CORE PILLARS SECTION */}
       <section id="about" className="bg-white border-y border-salmon/20 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="section-header mx-auto max-w-3xl text-center">
             <span className="text-xs font-bold uppercase tracking-widest text-green bg-green/10 px-3.5 py-1 rounded-full border border-green/20">
               Core Pillars
             </span>
@@ -291,14 +222,14 @@ export default function Home() {
       {/* 3. CLINICAL URGENCY: PILL FATIGUE & INFLAMMATION MECHANISM */}
       <section id="urgency" className="py-16 sm:py-24 bg-gradient-to-b from-cream/30 via-white to-cream/20 border-b border-salmon/20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="section-header mx-auto max-w-3xl text-center">
             <span className="text-xs font-bold uppercase tracking-widest text-crimson bg-crimson/10 px-3.5 py-1 rounded-full border border-crimson/20">
               The Clinical Challenge
             </span>
             <h2 className="text-3xl font-extrabold text-maroon sm:text-4xl lg:text-5xl mt-3">
               Tackling Diabetes, Pill Fatigue & Inflammation
             </h2>
-            <p className="urgency-sub mt-4 text-dark/75 sm:text-lg leading-relaxed">
+            <p className="mt-4 text-dark/75 sm:text-lg leading-relaxed">
               Addressing the real-world behavioral hurdles and complex pathophysiology of Type 2 Diabetes through a patient-centered solution.
             </p>
           </div>
@@ -368,7 +299,7 @@ export default function Home() {
       {/* 4. QUALITATIVE PHARMACEUTICAL COMPOSITION (NO PERCENTAGES) */}
       <section id="formulation" className="py-16 sm:py-24 bg-white border-b border-salmon/20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="section-header mx-auto max-w-3xl text-center">
             <span className="text-xs font-bold uppercase tracking-widest text-green bg-green/10 px-3.5 py-1 rounded-full border border-green/20">
               Formulation Science
             </span>
@@ -437,7 +368,7 @@ export default function Home() {
       {/* 5. SCIENTIFIC EVALUATION & RESULTS */}
       <section id="results" className="py-16 sm:py-24 bg-gradient-to-b from-white via-cream/30 to-white border-b border-salmon/20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="section-header mx-auto max-w-3xl text-center">
             <span className="text-xs font-bold uppercase tracking-widest text-maroon bg-salmon/20 px-3.5 py-1 rounded-full border border-salmon/30">
               Laboratory & Panel Results
             </span>
@@ -526,7 +457,7 @@ export default function Home() {
         <div className="absolute inset-0 -z-10" style={{ background: 'radial-gradient(circle 600px at 50% 30%, rgba(100,6,7,0.04), transparent)' }} />
 
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-12">
+          <div className="section-header mx-auto max-w-3xl text-center mb-10 sm:mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-crimson bg-crimson/10 px-3.5 py-1 rounded-full border border-crimson/20">
               Video Profile
             </span>
