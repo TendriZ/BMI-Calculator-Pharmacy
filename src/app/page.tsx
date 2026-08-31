@@ -496,7 +496,7 @@ export default function Home() {
               preload="metadata"
               className="w-full h-auto aspect-video object-cover"
             >
-              <source src="/video-profile-glucersen.mp4" type="video/mp4" />
+              <source src="/video-profile-glucersen.MOV" type="video/mp4" />
               Your browser does not support the HTML5 video player.
             </video>
 
