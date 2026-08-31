@@ -3,20 +3,32 @@
 import { useState } from 'react';
 
 const INSTAGRAM_DM_URL = 'https://ig.me/m/glucersen.id';
-const PREFILLED_MESSAGE = 'Halo, saya ingin konsultasi mengenai Glucersen 🌿';
+const PREFILLED_MESSAGE = 'Halo, saya ingin berkonsultasi terkait penggunaan Glucersen sublingual film';
 
 export default function FloatingConsult() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   const handleConsult = () => {
-    // Instagram DM link — on mobile opens IG app, on desktop opens instagram.com
+    // Copy text to clipboard as an instant fallback for devices/browsers that don't auto-fill ?text=
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(PREFILLED_MESSAGE).catch(() => {});
+    }
+
+    setIsCopied(true);
+
+    // Instagram DM link — on mobile opens IG app, on desktop opens instagram.com with prefilled text
     const encodedMessage = encodeURIComponent(PREFILLED_MESSAGE);
-    window.open(
-      `${INSTAGRAM_DM_URL}?text=${encodedMessage}`,
-      '_blank',
-      'noopener,noreferrer'
-    );
-    setIsOpen(false);
+    
+    setTimeout(() => {
+      window.open(
+        `${INSTAGRAM_DM_URL}?text=${encodedMessage}`,
+        '_blank',
+        'noopener,noreferrer'
+      );
+      setIsOpen(false);
+      setIsCopied(false);
+    }, 300);
   };
 
   return (
@@ -46,11 +58,9 @@ export default function FloatingConsult() {
 
           {/* Chat Bubble */}
           <div className="bg-cream/70 rounded-2xl rounded-tl-xs p-3.5 mb-4 border border-salmon/25">
-            <p className="text-xs sm:text-sm text-dark/85 leading-relaxed">
-              Halo! 👋 Ingin tahu lebih lanjut tentang terapi sublingual film <span className="font-bold text-maroon">Glucersen</span>?
-            </p>
-            <p className="text-xs text-dark/65 mt-1.5">
-              Konsultasikan dosis & penggunaan langsung via DM Instagram kami.
+            <p className="text-xs text-dark/60 font-semibold mb-1">💬 Pesan yang disiapkan:</p>
+            <p className="text-xs sm:text-sm text-dark/90 italic font-medium leading-relaxed bg-white/70 p-2.5 rounded-xl border border-salmon/20">
+              "{PREFILLED_MESSAGE}"
             </p>
           </div>
 
@@ -60,12 +70,23 @@ export default function FloatingConsult() {
             onClick={handleConsult}
             className="w-full flex items-center justify-center gap-2 bg-maroon hover:bg-crimson text-white font-semibold text-sm py-3 px-4 rounded-xl transition-all shadow-md shadow-maroon/25 hover:shadow-lg hover:shadow-maroon/35 active:scale-[0.98] cursor-pointer"
           >
-            <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <rect x="2" y="2" width="20" height="20" rx="5" strokeLinecap="round" strokeLinejoin="round" />
-              <circle cx="12" cy="12" r="5" strokeLinecap="round" strokeLinejoin="round" />
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-            </svg>
-            Chat via Instagram
+            {isCopied ? (
+              <>
+                <svg className="w-4.5 h-4.5 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+                <span>Membuka Instagram...</span>
+              </>
+            ) : (
+              <>
+                <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="12" cy="12" r="5" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                </svg>
+                <span>Chat via Instagram</span>
+              </>
+            )}
           </button>
         </div>
 

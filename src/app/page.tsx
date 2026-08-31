@@ -136,7 +136,7 @@ export default function Home() {
               Sublingual Film <span className="text-crimson italic font-serif block sm:inline">For Diabetes</span>
             </h1>
             <p className="mt-4 text-dark/80 md:mt-6 md:text-lg leading-relaxed">
-              Terapi pendamping berbasis ekstrak daun kersen (<em className="font-semibold text-maroon">Muntingia calabura L.</em>) dengan aktivitas antioksidan untuk mendukung kestabilan kadar glukosa darah dalam bentuk film larut cepat tanpa minum air.
+              Terapi pendamping berbasis ekstrak daun kersen (<em className="font-semibold text-maroon"><i>Muntingia calabura L.</i></em>) dengan aktivitas antioksidan untuk mendukung kestabilan kadar glukosa darah dalam bentuk film larut cepat tanpa minum air.
             </p>
 
             <div className="mt-6 w-full flex flex-wrap items-center justify-center sm:justify-between gap-y-2.5 text-xs font-semibold text-dark/70">
@@ -175,11 +175,11 @@ export default function Home() {
         </div>
         
         {/* HERO VIDEO SHOWCASE */}
-        <div id="hero-image-wrapper" className="relative h-[420px] sm:h-[480px] md:h-[540px] lg:h-[600px] w-full flex items-center justify-center p-3 sm:p-4 lg:p-6">
+        <div id="hero-image-wrapper" className="relative w-full flex items-center justify-center p-3 sm:p-4 lg:p-6">
           {/* Subtle background aura */}
           <div className="absolute inset-2 sm:inset-4 bg-gradient-to-tr from-salmon/25 via-green/10 to-maroon/15 rounded-[3rem] blur-xl -z-10" />
 
-          <div className="relative w-full h-full max-h-[600px] lg:max-h-[640px] rounded-[2.25rem] sm:rounded-[2.75rem] overflow-hidden shadow-[0_25px_60px_rgba(100,6,7,0.18)] border-2 border-white/90 group bg-black">
+          <div className="relative w-full max-w-2xl rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-[0_25px_60px_rgba(100,6,7,0.18)] border-2 border-white/90 group bg-black flex items-center justify-center aspect-video sm:aspect-auto">
             <video
               ref={heroVideoRef}
               autoPlay
@@ -187,13 +187,13 @@ export default function Home() {
               muted
               playsInline
               preload="metadata"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="w-full h-auto max-h-[580px] object-contain"
             >
               <source src="/promotion-vid.mp4" type="video/mp4" />
             </video>
 
             {/* Top Floating Badge */}
-            <div className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-salmon/30 shadow-md">
+            <div className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-salmon/30 shadow-md">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green"></span>
