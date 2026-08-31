@@ -123,7 +123,7 @@ export default function Home() {
   }, { scope: container });
 
   return (
-    <div ref={container}>
+    <div ref={container} className="overflow-x-hidden">
       {/* HERO SECTION */}
       <section id="hero" className="overflow-hidden sm:grid sm:grid-cols-2 lg:h-[85vh] items-center">
         <div className="p-8 md:p-12 lg:px-16 lg:py-24 relative">
@@ -207,7 +207,7 @@ export default function Home() {
             </div>
 
             {/* Dual-View Switcher Controls */}
-            <div className="absolute bottom-1.5 inset-x-1 z-20 flex items-center justify-between gap-2 p-2 rounded-2xl bg-white/90 backdrop-blur-md border border-salmon/30 shadow-lg">
+            <div className="absolute bottom-1.5 inset-x-1 z-20 flex items-center justify-between gap-2 p-1.5 sm:p-2 rounded-2xl bg-white/90 backdrop-blur-md border border-salmon/30 shadow-lg">
               <div className="flex gap-1.5 sm:gap-2">
                 <button
                   type="button"
