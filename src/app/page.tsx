@@ -247,8 +247,8 @@ export default function Home() {
       <section id="tentang" className="bg-white border-y border-salmon/20">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-2xl font-bold text-maroon sm:text-3xl">Dikembangkan Berdasarkan Riset Farmasi</h2>
-            <p className="mt-4 text-dark/70 sm:text-lg">Formulasi sediaan film sublingual berbahan alam terstandar untuk terapi pendamping diabetes.</p>
+            <h2 className="text-2xl font-bold text-maroon sm:text-3xl">Dikembangkan Berdasarkan Riset Kefarmasian</h2>
+            <p className="mt-4 text-dark/70 sm:text-lg">Formulasi sediaan film sublingual berbahan alam untuk <i>terapi pendamping diabetes</i> </p>
           </div>
           <dl className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
@@ -276,7 +276,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold text-maroon sm:text-4xl">Keunggulan Formulasi Glucersen</h2>
-            <p className="mt-4 text-lg text-dark/80">Pendekatan inovatif untuk kepatuhan terapi yang lebih baik tanpa mengorbankan akurasi klinis.</p>
+            <p className="mt-4 text-lg text-dark/80">Pendekatan inovatif untuk kepatuhan terapi yang lebih baik tanpa mengorbankan akurasi klinis</p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
@@ -321,7 +321,7 @@ export default function Home() {
               Inovasi Terapi Bersama <span className="text-crimson italic font-serif">Glucersen</span>
             </h2>
             <p className="mt-4 text-dark/70 sm:text-lg leading-relaxed">
-              Pelajari keunggulan dan kemudahan penggunaan sediaan sublingual film ekstrak daun kersen (<em>Muntingia calabura L.</em>) untuk kestabilan kadar glukosa darah Anda.
+              Pelajari keunggulan dan kemudahan penggunaan sediaan sublingual film ekstrak daun kersen (<em>Muntingia calabura L.</em>) untuk kestabilan kadar glukosa darah Anda
             </p>
           </div>
 
