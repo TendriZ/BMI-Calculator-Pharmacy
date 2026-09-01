@@ -228,7 +228,7 @@ export default function Home() {
                     </span>
                   </div>
                   <h3 className="text-lg font-bold text-maroon mt-4">{pillar.title}</h3>
-                  <p className="text-xs sm:text-sm text-dark/75 leading-relaxed mt-2.5">{pillar.desc}</p>
+                  <p className="text-xs sm:text-sm text-dark/75 leading-relaxed mt-2.5 text-justify">{pillar.desc}</p>
                 </div>
               </div>
             ))}
@@ -283,10 +283,10 @@ export default function Home() {
                   <p className="text-xs text-dark/50 font-medium">Why Conventional Tablets Often Fail in Long-Term Therapy</p>
                 </div>
               </div>
-              <p className="text-sm text-dark/80 leading-relaxed">
+              <p className="text-sm text-dark/80 leading-relaxed text-justify">
                 Daily management of Type 2 Diabetes typically demands multiple tablets every day. Over months and years, this tedious routine creates <strong>"pill fatigue"</strong>—a state of psychological exhaustion, resistance, and missed doses.
               </p>
-              <p className="text-sm text-dark/80 leading-relaxed mt-3">
+              <p className="text-sm text-dark/80 leading-relaxed mt-3 text-justify">
                 Furthermore, many elderly individuals and patients suffer from <em>dysphagia</em> (difficulty swallowing large pills). <strong>Glucersen</strong> eliminates this friction completely by melting under the tongue without drinking water, making therapy effortless and comfortable.
               </p>
             </div>
@@ -302,10 +302,10 @@ export default function Home() {
                   <p className="text-xs text-dark/50 font-medium">How Quercetin Restores Cellular Insulin Sensitivity</p>
                 </div>
               </div>
-              <p className="text-sm text-dark/80 leading-relaxed">
+              <p className="text-sm text-dark/80 leading-relaxed text-justify">
                 Diabetes is a multifactorial disease where <strong>chronic low-grade systemic inflammation</strong> acts as a major disruptor. Inflammatory markers block insulin receptors on cell surfaces, preventing glucose from entering cells ("starving body cells").
               </p>
-              <p className="text-sm text-dark/80 leading-relaxed mt-3">
+              <p className="text-sm text-dark/80 leading-relaxed mt-3 text-justify">
                 When cells cannot absorb glucose, the liver mistakenly assumes the body is starving and releases stored sugar into the bloodstream, worsening hyperglycemia. By providing concentrated <strong>antioxidant quercetin</strong>, Glucersen suppresses inflammation, restores insulin signaling, and helps cells feed normally again.
               </p>
             </div>
@@ -374,7 +374,7 @@ export default function Home() {
                   <h3 className="text-base font-bold text-maroon mt-3">{comp.title}</h3>
                   <p className="text-xs font-semibold text-green italic">{comp.latin}</p>
                   <p className="text-xs font-bold text-dark/70 mt-1">{comp.role}</p>
-                  <p className="text-xs text-dark/70 leading-relaxed mt-2.5">{comp.desc}</p>
+                  <p className="text-xs text-dark/70 leading-relaxed mt-2.5 text-justify">{comp.desc}</p>
                 </div>
               </div>
             ))}
@@ -406,7 +406,7 @@ export default function Home() {
                 </span>
                 <p className="text-4xl sm:text-5xl font-black text-green mt-5">73.62%</p>
                 <h3 className="text-base font-bold text-maroon mt-2">Antioxidant Inhibition</h3>
-                <p className="text-xs text-dark/70 mt-2 leading-relaxed">
+                <p className="text-xs text-dark/70 mt-2 leading-relaxed text-justify">
                   Demonstrates potent free-radical scavenging capacity—reaching approximately <strong>4/5 (80%)</strong> of the antioxidant potency of pure Ascorbic Acid (Vitamin C).
                 </p>
               </div>
@@ -423,7 +423,7 @@ export default function Home() {
                 </span>
                 <p className="text-4xl sm:text-5xl font-black text-maroon mt-5">95s</p>
                 <h3 className="text-base font-bold text-maroon mt-2">Fast Sublingual Melt</h3>
-                <p className="text-xs text-dark/70 mt-2 leading-relaxed">
+                <p className="text-xs text-dark/70 mt-2 leading-relaxed text-justify">
                   Fully dissolves beneath the tongue in ~95 seconds (&lt; 2 minutes), strictly compliant with European Pharmacopoeia (<em>Ph. Eur.</em>) criteria for ODTs.
                 </p>
               </div>
@@ -440,7 +440,7 @@ export default function Home() {
                 </span>
                 <p className="text-4xl sm:text-5xl font-black text-crimson mt-5">6.84</p>
                 <h3 className="text-base font-bold text-maroon mt-2">Oral-Safe pH Level</h3>
-                <p className="text-xs text-dark/70 mt-2 leading-relaxed">
+                <p className="text-xs text-dark/70 mt-2 leading-relaxed text-justify">
                   Maintains a physiological pH of 6.84, precisely within the natural oral mucosal range (6.2 – 7.6) to prevent any irritation or tissue discomfort.
                 </p>
               </div>
@@ -457,7 +457,7 @@ export default function Home() {
                 </span>
                 <p className="text-4xl sm:text-5xl font-black text-green mt-5">94.29%</p>
                 <h3 className="text-base font-bold text-maroon mt-2">Acceptability Score</h3>
-                <p className="text-xs text-dark/70 mt-2 leading-relaxed">
+                <p className="text-xs text-dark/70 mt-2 leading-relaxed text-justify">
                   Evaluated across 15 panel respondents with unanimous "Excellent" ratings for sweet taste, surface uniformity, and comfortable administration.
                 </p>
               </div>
