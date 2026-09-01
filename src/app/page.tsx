@@ -103,7 +103,7 @@ export default function Home() {
               Sublingual Film <span className="text-crimson italic font-serif block sm:inline">For Diabetes</span>
             </h1>
             <p className="hero-desc mt-4 text-dark/80 md:mt-6 md:text-lg leading-relaxed">
-              An innovative adjuvant therapy utilizing Indonesian <em className="font-semibold text-maroon"><i>Kersen</i></em> (Muntingia calabura) leaves. Formulated as a water-free sublingual film to overcome pill fatigue and swallowing difficulties, delivering quercetin antioxidants directly into systemic circulation.
+              An innovative adjuvant therapy utilizing Indonesian <span className="font-semibold text-maroon">Kersen</span> <i>(Muntingia calabura)</i>{' '}leaves. Formulated as a water-free sublingual film to overcome pill fatigue and swallowing difficulties, delivering quercetin antioxidants directly into systemic circulation.
             </p>
 
             <div className="hero-features mt-6 w-full flex flex-wrap items-center justify-center sm:justify-between gap-y-2.5 text-xs font-semibold text-dark/70">
