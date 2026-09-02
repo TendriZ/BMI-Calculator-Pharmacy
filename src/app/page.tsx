@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { scrollToVideoSection } from '@/lib/scroll';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +22,33 @@ export default function Home() {
       setIsMuted(nextState);
     }
   };
+
+  useEffect(() => {
+    // 1. If page loads directly with #video hash, smoothly scroll to framed video position
+    if (window.location.hash === '#video') {
+      const timer = setTimeout(() => {
+        scrollToVideoSection();
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+
+    // 2. Intercept any anchor click targeting #video or /#video anywhere on the page
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('a');
+      if (!target) return;
+
+      const href = target.getAttribute('href');
+      if (href === '#video' || href === '/#video') {
+        e.preventDefault();
+        scrollToVideoSection();
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick, { capture: true });
+    return () => {
+      document.removeEventListener('click', handleAnchorClick, { capture: true });
+    };
+  }, []);
 
   useGSAP(() => {
     // 1. HERO ANIMATION (Runs sequentially on load)
@@ -134,12 +162,16 @@ export default function Home() {
             </div>
 
             <div className="hero-cta mt-8 md:mt-10 flex flex-wrap gap-4 justify-center sm:justify-start w-full relative z-10">
-              <Link
+              <a
                 href="#video"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToVideoSection();
+                }}
                 className="inline-flex items-center justify-center rounded-full bg-crimson px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-maroon shadow-lg shadow-crimson/30 active:scale-95 cursor-pointer"
               >
                 Watch Innovation Video
-              </Link>
+              </a>
               <Link
                 href="#about"
                 className="inline-flex items-center justify-center rounded-full bg-cream border border-salmon/40 px-6 py-3.5 text-sm font-semibold text-dark/80 transition hover:bg-white hover:text-maroon hover:border-maroon shadow-sm active:scale-95 cursor-pointer"
@@ -478,7 +510,7 @@ export default function Home() {
             <span className="text-xs font-bold uppercase tracking-widest text-crimson bg-crimson/10 px-3.5 py-1 rounded-full border border-crimson/20">
               Video Profile
             </span>
-            <h2 className="text-3xl font-extrabold text-maroon sm:text-4xl lg:text-5xl leading-tight tracking-tight mt-3">
+            <h2 id="video-heading" className="scroll-mt-10 text-3xl font-extrabold text-maroon sm:text-4xl lg:text-5xl leading-tight tracking-tight mt-3">
               Research & Innovation <span className="text-crimson italic font-serif">Glucersen</span>
             </h2>
             <p className="mt-4 text-dark/70 sm:text-lg leading-relaxed">

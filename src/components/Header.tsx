@@ -4,10 +4,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { scrollToVideoSection } from '@/lib/scroll';
 
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleVideoClick = (e: React.MouseEvent) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      scrollToVideoSection();
+    }
+  };
 
   return (
     <>
@@ -48,7 +56,11 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#video" className="text-dark/70 transition hover:text-maroon">
+                  <Link
+                    href="/#video"
+                    onClick={handleVideoClick}
+                    className="text-dark/70 transition hover:text-maroon cursor-pointer"
+                  >
                     Video Profile
                   </Link>
                 </li>
@@ -95,7 +107,14 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/#video" onClick={() => setIsOpen(false)} className="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon">
+            <Link
+              href="/#video"
+              onClick={(e) => {
+                setIsOpen(false);
+                handleVideoClick(e);
+              }}
+              className="block rounded-lg px-3 py-2 text-dark/70 hover:bg-cream hover:text-maroon cursor-pointer"
+            >
               Video Profile
             </Link>
           </li>
