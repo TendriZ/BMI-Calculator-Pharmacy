@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { MessageCircle, Copy } from 'lucide-react';
 
 const INSTAGRAM_USERNAME = 'glucersen.id';
 const PREFILLED_MESSAGE = 'Hello, I would like to consult regarding Glucersen sublingual film.';
@@ -71,7 +72,7 @@ export default function FloatingConsult() {
           <div className="bg-cream/70 rounded-2xl rounded-tl-xs p-3.5 mb-4 border border-salmon/25">
             <div className="flex items-center justify-between mb-1.5">
               <p className="text-xs text-dark/70 font-bold flex items-center gap-1.5">
-                <span>💬</span> Prepared Inquiry:
+                <MessageCircle className="w-3.5 h-3.5 text-maroon" /> Prepared Inquiry:
               </p>
               <button
                 type="button"
@@ -86,7 +87,9 @@ export default function FloatingConsult() {
                     Copied!
                   </span>
                 ) : (
-                  <span>📋 Copy</span>
+                  <span className="flex items-center gap-1">
+                    <Copy className="w-3 h-3" /> Copy
+                  </span>
                 )}
               </button>
             </div>

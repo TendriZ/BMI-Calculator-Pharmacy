@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { scrollToVideoSection } from '@/lib/scroll';
+import { Leaf, Droplets, Zap, HeartPulse, Pill, Microscope, Timer, FlaskConical } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -230,40 +231,53 @@ export default function Home() {
                 title: 'Quercetin-Rich',
                 badge: 'Active Bioflavonoid',
                 desc: 'Contains potent quercetin compounds from Indonesian cherry leaves that actively suppress systemic chronic inflammation and oxidative stress.',
-                icon: '🌿',
+                icon: Leaf,
+                iconColor: 'text-green',
+                iconBg: 'bg-green/10 border-green/20',
               },
               {
                 title: 'Antidiabetic Potential',
                 badge: 'Glucose Regulation',
                 desc: 'Improves insulin sensitivity, promotes cellular glucose uptake, and helps prevent excess hepatic glucose breakdown by the liver.',
-                icon: '🩸',
+                icon: Droplets,
+                iconColor: 'text-crimson',
+                iconBg: 'bg-crimson/10 border-crimson/20',
               },
               {
                 title: 'Sublingual Film',
                 badge: 'Mucosal Absorption',
                 desc: 'Fast-dissolving oral strip that delivers bioactive compounds directly into sublingual veins, bypassing gastrointestinal degradation.',
-                icon: '⚡',
+                icon: Zap,
+                iconColor: 'text-maroon',
+                iconBg: 'bg-maroon/10 border-maroon/20',
               },
               {
                 title: 'Patient-Friendly',
                 badge: 'Zero Pill Fatigue',
                 desc: 'Dissolves without water in 95s with a pleasant sweet taste, eliminating dysphagia (swallowing difficulty) and daily medication burnout.',
-                icon: '👍',
+                icon: HeartPulse,
+                iconColor: 'text-green',
+                iconBg: 'bg-green/10 border-green/20',
               },
-            ].map((pillar, i) => (
-              <div key={i} className="pillar-card flex flex-col justify-between rounded-2xl border border-salmon/40 bg-cream/30 p-6 hover:bg-white hover:border-maroon/40 hover:shadow-lg transition-all duration-300">
-                <div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-3xl">{pillar.icon}</span>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-green bg-green/10 px-2.5 py-0.5 rounded-full border border-green/20">
-                      {pillar.badge}
-                    </span>
+            ].map((pillar, i) => {
+              const Icon = pillar.icon;
+              return (
+                <div key={i} className="pillar-card flex flex-col justify-between rounded-2xl border border-salmon/40 bg-cream/30 p-6 hover:bg-white hover:border-maroon/40 hover:shadow-lg transition-all duration-300">
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <div className={`flex h-11 w-11 items-center justify-center rounded-xl border ${pillar.iconBg} ${pillar.iconColor}`}>
+                        <Icon className="w-5 h-5" strokeWidth={2.2} />
+                      </div>
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-green bg-green/10 px-2.5 py-0.5 rounded-full border border-green/20">
+                        {pillar.badge}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold text-maroon mt-4">{pillar.title}</h3>
+                    <p className="text-xs sm:text-sm text-dark/75 leading-relaxed mt-2.5 text-justify">{pillar.desc}</p>
                   </div>
-                  <h3 className="text-lg font-bold text-maroon mt-4">{pillar.title}</h3>
-                  <p className="text-xs sm:text-sm text-dark/75 leading-relaxed mt-2.5 text-justify">{pillar.desc}</p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -307,8 +321,8 @@ export default function Home() {
             {/* Box 1: Pill Fatigue & Dysphagia */}
             <div className="deep-dive-card rounded-3xl border-2 border-salmon/30 bg-white p-8 shadow-sm hover:shadow-md transition">
               <div className="flex items-center gap-3 mb-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-crimson/10 text-crimson text-xl font-bold">
-                  💊
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-crimson/10 text-crimson border border-crimson/20">
+                  <Pill className="w-5 h-5" strokeWidth={2.2} />
                 </span>
                 <div>
                   <h3 className="text-xl font-bold text-maroon">The Behavioral Barrier: Pill Fatigue & Dysphagia</h3>
@@ -326,8 +340,8 @@ export default function Home() {
             {/* Box 2: Systemic Inflammation & Insulin Resistance (DeFronzo mechanism) */}
             <div className="deep-dive-card rounded-3xl border-2 border-salmon/30 bg-white p-8 shadow-sm hover:shadow-md transition">
               <div className="flex items-center gap-3 mb-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-green/10 text-green text-xl font-bold">
-                  🔬
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-green/10 text-green border border-green/20">
+                  <Microscope className="w-5 h-5" strokeWidth={2.2} />
                 </span>
                 <div>
                   <h3 className="text-xl font-bold text-maroon">The Biological Root: Systemic Inflammation</h3>
@@ -561,8 +575,8 @@ export default function Home() {
           {/* 3 Scientific Highlights */}
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-salmon/30 shadow-sm hover:shadow-md transition">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-green/10 text-green font-bold text-lg">
-                🍃
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-green/10 text-green border border-green/20">
+                <Leaf className="w-5 h-5" strokeWidth={2.2} />
               </div>
               <div>
                 <p className="text-sm font-bold text-maroon">Indonesian Cherry Leaves</p>
@@ -571,8 +585,8 @@ export default function Home() {
             </div>
 
             <div className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-salmon/30 shadow-sm hover:shadow-md transition">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-maroon/10 text-maroon font-bold text-lg">
-                ⚡
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-maroon/10 text-maroon border border-maroon/20">
+                <Timer className="w-5 h-5" strokeWidth={2.2} />
               </div>
               <div>
                 <p className="text-sm font-bold text-maroon">95s Rapid Sublingual Melt</p>
@@ -581,8 +595,8 @@ export default function Home() {
             </div>
 
             <div className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-salmon/30 shadow-sm hover:shadow-md transition">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-crimson/10 text-crimson font-bold text-lg">
-                🔬
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-crimson/10 text-crimson border border-crimson/20">
+                <FlaskConical className="w-5 h-5" strokeWidth={2.2} />
               </div>
               <div>
                 <p className="text-sm font-bold text-maroon">Pharmaceutical Precision</p>
