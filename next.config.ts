@@ -21,8 +21,9 @@ const securityHeaders = [
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'",         // Next.js requires unsafe-inline/eval for hydration
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob:",
+      "img-src 'self' data: blob: https://i.ytimg.com",
       "media-src 'self'",
+      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
       "connect-src 'self'",
       "frame-ancestors 'none'",                                   // Reinforces X-Frame-Options DENY
       "base-uri 'self'",

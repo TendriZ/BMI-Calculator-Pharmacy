@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -11,18 +11,8 @@ import { Leaf, Droplets, Zap, HeartPulse, Pill, Microscope, Timer, FlaskConical 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const [isMuted, setIsMuted] = useState(true);
   const container = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
-
-  const toggleSound = () => {
-    if (videoRef.current) {
-      const nextState = !videoRef.current.muted;
-      videoRef.current.muted = nextState;
-      setIsMuted(nextState);
-    }
-  };
 
   useEffect(() => {
     // 1. If page loads directly with #video hash, smoothly scroll to framed video position
@@ -94,28 +84,6 @@ export default function Home() {
 
     // Initial refresh
     ScrollTrigger.refresh();
-
-    // 3. AUTOPLAY VIDEO ON SCROLL
-    const videoEl = videoRef.current;
-    if (videoEl) {
-      ScrollTrigger.create({
-        trigger: '#video',
-        start: 'top 75%',
-        end: 'bottom 20%',
-        onEnter: () => {
-          videoEl.play().catch(() => {});
-        },
-        onEnterBack: () => {
-          videoEl.play().catch(() => {});
-        },
-        onLeave: () => {
-          videoEl.pause();
-        },
-        onLeaveBack: () => {
-          videoEl.pause();
-        },
-      });
-    }
   }, { scope: container });
 
   return (
@@ -532,44 +500,16 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="video-card relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border-2 border-salmon/30 bg-black shadow-[0_25px_60px_rgba(100,6,7,0.12)] group">
-            <video
-              ref={videoRef}
-              controls
-              loop
-              muted={isMuted}
-              playsInline
-              preload="metadata"
-              className="w-full h-auto aspect-video object-cover"
-            >
-              <source src="/video-profile-glucersen.mp4" type="video/mp4" />
-              Your browser does not support the HTML5 video player.
-            </video>
-
-            {/* Quick Sound Toggle Button Overlay */}
-            <button
-              type="button"
-              onClick={toggleSound}
-              className="absolute top-4 right-4 z-20 flex items-center gap-2 bg-black/65 hover:bg-black/85 backdrop-blur-md text-white px-4 py-2 rounded-full border border-white/20 text-xs font-semibold transition-all cursor-pointer shadow-lg active:scale-95"
-              title={isMuted ? 'Click to enable audio' : 'Click to mute audio'}
-            >
-              {isMuted ? (
-                <>
-                  <svg className="w-4 h-4 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-                  </svg>
-                  <span>Enable Sound</span>
-                </>
-              ) : (
-                <>
-                  <svg className="w-4 h-4 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                  </svg>
-                  <span className="text-green font-bold">Sound Active</span>
-                </>
-              )}
-            </button>
+          <div className="video-card relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border-2 border-salmon/30 bg-black shadow-[0_25px_60px_rgba(100,6,7,0.12)]">
+            <div className="relative w-full aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/mZkihB9_3a8?rel=0"
+                title="Video Profile & Research Innovation Glucersen"
+                className="absolute inset-0 w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
           </div>
 
           {/* 3 Scientific Highlights */}
