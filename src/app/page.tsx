@@ -342,7 +342,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 title: 'Cherry Leaf Extract',
@@ -378,6 +378,13 @@ export default function Home() {
                 role: 'Taste-Masking Agents',
                 desc: 'Calorie-free steviol combined with cooling menthol to mask bitterness and deliver a refreshing sweet flavor for 94.29% patient acceptance.',
                 tag: 'Taste & Comfort',
+              },
+              {
+                title: 'Sodium Starch Glycolate',
+                latin: '(SSG) Superdisintegrant',
+                role: 'Rapid Swelling Disintegrant',
+                desc: 'Accelerates film breakdown via rapid water absorption and massive 200–300x swelling without viscous gelling, exerting hydrodynamic force for swift sublingual dissolution in 95s.',
+                tag: 'Rapid Disintegration',
               },
             ].map((comp, i) => (
               <div key={i} className="formulation-card rounded-2xl border border-salmon/40 bg-cream/20 p-5 flex flex-col justify-between hover:bg-cream/50 hover:shadow-md transition">

@@ -34,6 +34,11 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: [
+    '192.168.100.70',
+    'localhost',
+    '127.0.0.1',
+  ],
   headers: async () => [
     {
       // Apply security headers to all routes
