@@ -529,7 +529,7 @@ export default function Home() {
                 <Timer className="w-5 h-5" strokeWidth={2.2} />
               </div>
               <div>
-                <p className="text-sm font-bold text-maroon">95s Rapid Sublingual Melt</p>
+                <p className="text-sm font-bold text-maroon">95s Rapid Sublingual Dissolves</p>
                 <p className="text-xs text-dark/60">Zero water required, effortless intake</p>
               </div>
             </div>
