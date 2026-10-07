@@ -58,7 +58,7 @@ export default function Footer() {
               <div className="col-span-1">
                 <p className="font-bold text-maroon text-sm tracking-wide">Affiliations</p>
                 <ul className="mt-5 space-y-3.5 text-sm">
-                  <li><a href="https://www.unair.ac.id/" target="_blank" rel="noopener noreferrer" className="text-dark/70 underline decoration-dark/30 underline-offset-2 transition hover:text-maroon hover:decoration-maroon">Universitas Airlangga</a></li>
+                  <li><a href="https://unair.ac.id/" target="_blank" rel="noopener noreferrer" className="text-dark/70 underline decoration-dark/30 underline-offset-2 transition hover:text-maroon hover:decoration-maroon">Universitas Airlangga</a></li>
                   <li><a href="https://unair.ac.id/fakultas-farmasi/" target="_blank" rel="noopener noreferrer" className="text-dark/70 underline decoration-dark/30 underline-offset-2 transition hover:text-maroon hover:decoration-maroon">Faculty of Pharmacy</a></li>
                   <li><a href="https://www.youtube.com/shorts/c2n_uj04I1I" target="_blank" rel="noopener noreferrer" className="text-dark/70 underline decoration-dark/30 underline-offset-2 transition hover:text-maroon hover:decoration-maroon">Nanizar Building</a></li>
                   <li><a href="https://innopa.org/" target="_blank" rel="noopener noreferrer" className="text-dark/70 underline decoration-dark/30 underline-offset-2 transition hover:text-maroon hover:decoration-maroon">INNOPA Official</a></li>
